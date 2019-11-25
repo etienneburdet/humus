@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   belongs_to :user
 
   validates :surface, presence: true, numericality: { only_integer: true }, allow_blank: false
-  validates :investment_acp, presence: true, numericality: { only_integer: true }, allow_blank: false
+  validates :investment_cap, presence: true, numericality: { only_integer: true }, allow_blank: false
   validates :duration, presence: true, numericality: { only_integer: true }, allow_blank: false
   validates :uhi, presence: true, numericality: { only_integer: true }
   validates :biodiversity, presence: true, numericality: { only_integer: true }
@@ -18,8 +18,8 @@ class Project < ApplicationRecord
 
   def type_in_list?
     project_types = ['agriculture', 'forest']
-    unless type && project_types.include?(type)
-      errors.add(:type, 'must be in the list of defined projects type')
+    unless project_type && project_types.include?(project_type)
+      errors.add(:project_type, 'must be in the list of defined projects type')
     end
   end
 
