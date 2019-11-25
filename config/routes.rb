@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :projects, except: %i[edit update destroy] do
     resources :contracts, only: %i[new create]
   end
-  resources :contracts, except: %i[new create destroy]
+  resources :contracts, only: %i[index show]
 end

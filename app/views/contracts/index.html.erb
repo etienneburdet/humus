@@ -1,0 +1,9 @@
+<% @contracts.each do |contract| %>
+  <%= link_to contract_path(contract) do %>
+    <%= contract.project.name %><br>
+    <%= contract.project.duration %><br>
+    <%= contract.investment %><br>
+    <%= contract.status %><br>
+    <br>
+  <% end %>
+<% end %>

@@ -94,9 +94,11 @@ contract_1.user = raja
 contract_1.project = ferme
 contract_1.investment = 10_000
 contract_1.status = 'Invoice sent'
+contract_1.save!
 
 contract_2 = Contract.new
 contract_2.user = florence
 contract_2.project = foret
 contract_2.investment = 20_000
 contract_2.status = 'Active'
+contract_2.save!
