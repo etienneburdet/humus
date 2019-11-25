@@ -1,0 +1,10 @@
+<%= simple_form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :investment_cap %>
+  <%= f.input :surface %>
+  <%= f.input :start_date %>
+  <%= f.input :duration %>
+  <%= f.input :project_type, collection: ['agriculture', 'forest'] %>
+  <%= f.button :submit %>
+<% end %>
