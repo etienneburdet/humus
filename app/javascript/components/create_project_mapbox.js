@@ -11,16 +11,19 @@ const createProjectMapBox = () => {
       style: 'mapbox://styles/mapbox/streets-v11'
     });
 
+    // const latInput = document.getElementById('lat');
+    const lngInput = document.getElementById('project_longitude');
+
     const updateMarker = e => {
-      // const lngLat = [e.lngLat.lng, e.lngLat.lat];
-      // console.log(lngLat);
-      console.log(e.lngLat);
       marker.setLngLat(e.lngLat);
+      // latInput.value(e.lngLat.lat);
+      lngInput.value(e.lngLat.lng);
     };
 
     const marker = new mapboxgl.Marker();
     map.on('click', updateMarker);
     marker.addTo(map);
+
   }
 };
 
