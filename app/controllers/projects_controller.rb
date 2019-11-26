@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     @project.biodiversity = compute_bonus
     @project.water_infiltration = compute_bonus
     @project.local_food = compute_bonus
+    raise
     @project.save
     redirect_to projects_path
   end
@@ -36,7 +37,9 @@ class ProjectsController < ApplicationController
                                     :investment_cap,
                                     :duration, :surface,
                                     :start_date,
-                                    :project_type)
+                                    :project_type,
+                                    :latitude,
+                                    :longitude)
   end
 
   def compute_bonus
