@@ -1,6 +1,6 @@
 .search-elements {
   width: 100%;
-  padding: 30px;
+  padding: 25px;
   // align-items: center;
   img {
     width: 60px;
@@ -15,4 +15,8 @@
     white-space: nowrap;
     margin-left: 40px;
   }
+}
+
+.form-control {
+  height: 50px;
 }
