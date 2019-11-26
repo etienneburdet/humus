@@ -6,9 +6,10 @@
   <%= f.input :start_date %>
   <%= f.input :duration %>
   <%= f.input :project_type, collection: ['agriculture', 'forest'] %>
+
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :latitude, as: :hidden %>
-  <%= f.button :submit %>
+  <%= f.button :submit %> <%= link_to "Submit", "#", class: "btn btn-primary text-center" %>
 <% end %>
 
 <div
