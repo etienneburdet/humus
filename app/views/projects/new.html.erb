@@ -6,8 +6,8 @@
   <%= f.input :start_date %>
   <%= f.input :duration %>
   <%= f.input :project_type, collection: ['agriculture', 'forest'] %>
-  <%= f.input :longitude, input_html: { value: "" } %>
-  <%= f.input :lattitude, input_html: { value: "" } %>
+  <%= f.input :longitude, as: :hidden %>
+  <%= f.input :latitude, as: :hidden %>
   <%= f.button :submit %>
 <% end %>
 
