@@ -13,3 +13,9 @@
     <% end %>
   </div>
 </div>
+
+<%= form_for  do |f| %>
+  <%= render "shared/errors", object:  %>
+  <%= f.text_field :field %>
+
+<% end %>
