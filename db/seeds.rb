@@ -61,6 +61,8 @@ mike.save!
 
 ferme = Project.new
 ferme.user = mike
+ferme.longitude = 2.6450
+ferme.latitude = 48.8896
 ferme.surface = 50
 ferme.duration = 10
 ferme.investment_cap = 500_000
@@ -76,6 +78,8 @@ ferme.save!
 
 foret = Project.new
 foret.user = paul
+foret.latitude = 48.7671
+foret.longitude = 2.5529
 foret.surface = 100
 foret.duration = 20
 foret.investment_cap = 500_000
