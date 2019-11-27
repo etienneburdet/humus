@@ -7,8 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def search
-    @projects = Project.all
-
+    @projects = Project.near(params[:q], 50)
     @markers = @projects.map do |project|
       {
         lat: project.latitude,
