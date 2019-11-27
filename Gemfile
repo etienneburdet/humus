@@ -10,12 +10,14 @@ gem 'rails', '5.2.3'
 gem 'redis'
 
 gem 'autoprefixer-rails'
+gem 'cloudinary', '~> 1.12.0'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'geocoder'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
