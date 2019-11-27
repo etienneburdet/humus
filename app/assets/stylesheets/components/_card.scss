@@ -1,0 +1,42 @@
+.card {
+  width: 401px;
+  height: 274px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.image-star-container {
+  height: 174px;
+  width: 401px;
+}
+
+.image-star-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.fa-star {
+  color: $basecolor;
+}
+
+.change-icon .fas {
+  display: none;
+}
+
+.change-icon:hover .far,
+.change-icon:active .far{
+  display: none;
+}
+.change-icon:hover .fas,
+.change-icon:active .fas{
+  display: block;
+}
+
+.favorite {
+  color: $highlight;
+}
+
+.star-position {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
