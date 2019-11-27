@@ -6,10 +6,10 @@
               justify-content-between
               border
               border-beige">
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"small-logo" %>
-    <%= form_with url: search_path, method: "get", class: "form-inline", local: true do %>
-      <%= text_field_tag :q, params[:q], class: "form-control mx-3 flex-grow", placeholder: "Où souhaitez-vous investir ?" %>
-      <%= submit_tag "Rechercher un Projet", class: "btn btn-primary" %>
-    <% end %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"small-logo flex-shrink-1" %>
+      <%= form_with url: search_path, method: "get", class: "form-inline w-100", local: true do %>
+        <%= text_field_tag :q, params[:q], class: "form-control mx-3", placeholder: "Où souhaitez-vous investir ?" %>
+        <%= submit_tag "Rechercher un Projet", class: "btn btn-primary" %>
+      <% end %>
   </div>
 </div>
