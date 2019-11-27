@@ -1,15 +1,19 @@
 <div class="container">
-  <div class="row
+  <form class="row
               mx-auto
               p-2
               align-item-center
               justify-content-between
               border
               border-beige">
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"small-logo flex-shrink-1" %>
-    <%= form_with url: search_path, method: "get", class: "form-inline", local: true do %>
-      <%= text_field_tag :q, params[:q], class: "form-control mx-3", placeholder: "Où souhaitez-vous investir ?" %>
-      <%= submit_tag "Rechercher un Projet", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+    <div class="col-lg-2 my-auto text-center">
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:"small-logo my-1" %>
+    </div>
+    <div class="col my-auto text-center">
+      <input type="text" class="form-control flex-grow my-1" id="q" name="q" placeholder="Où souhaitez-vous investir ?">
+    </div>
+    <div class="col-lg-3 my-auto text-center">
+      <button type="submit" class="btn btn-primary text-nowrap my-1">Rechercher un Projet</button>
+    </div>
+  </form>
 </div>
