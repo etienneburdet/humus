@@ -1,9 +1,20 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update]
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[search]
 
   def index
     @projects = Project.all
+  end
+
+  def search
+    @projects = Project.all
+
+    @markers = @projects.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
