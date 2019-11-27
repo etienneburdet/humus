@@ -2,6 +2,9 @@ class Project < ApplicationRecord
   has_many :contracts, dependent: :destroy
   belongs_to :user
 
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
+
   validates :surface, presence: true, numericality: { only_integer: true }, allow_blank: false
   validates :investment_cap, presence: true, numericality: { only_integer: true }, allow_blank: false
   validates :duration, presence: true, numericality: { only_integer: true }, allow_blank: false
