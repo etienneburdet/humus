@@ -75,7 +75,6 @@ ferme.water_infiltration = 10_000
 ferme.local_food = 5
 ferme.description = "Une ferme dans l'Oise, qui cultive des fruits. Soutenez nous !"
 ferme.photo.attach(io: file_ferme, filename: 'ivan-bandura-lhF8KI8fb84-unsplash_wthnnw.jpg', content_type: 'image/jpg')
-
 ferme.save!
 
 file_foret = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574940272/lucas-gallone-Q4QjAPMpJRQ-unsplash_fesacp.jpg')
