@@ -1,10 +1,10 @@
 .footer {
   background: $basecolor;
-  height: 7rem;
   padding: 0rem 4rem;
-  // position: absolute;
-  // bottom: 0;
-  width: 100%;
+  clear: both;
+  position: relative;
+  height: 7rem;
+  margin-top: -7rem;
 }
 
 .footer a {
