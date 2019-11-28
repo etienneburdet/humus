@@ -3,18 +3,24 @@
     <div class="money mb-2">
       <div class="money-collected d-flex justify-content-between">
         <div class="left">
-          <h4>Montant collecté</h4>
+          <h4><b>Montant collecté</b></h4>
         </div>
         <div class="right">
-          <h4>77 0000€</h4>
+          <h4><%=  project.investment %>€</h4>
         </div>
       </div>
       <div class="money-total d-flex justify-content-between align-items-center">
         <div class="progress flex-grow-1 mr-4" style="height: 12px;">
-          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar"
+               role="progressbar"
+               style="width: <%=  project.investment.fdiv(project.investment_cap) * 100 %>%"
+               aria-valuenow="<%=  project.investment.fdiv(project.investment_cap) * 100 %>"
+               aria-valuemin="0"
+               aria-valuemax="100">
+          </div>
         </div>
         <div class="right">
-          <h4>105 0000€</h4>
+          <h4><%= project.investment_cap %>€</h4>
         </div>
       </div>
     </div>
@@ -27,7 +33,7 @@
           <h5>30</h5>
         </div>
       </div>
-      <div class="investors d-flex justify-content-between">
+      <div class="investors d-flex justify-content-between mb-3">
         <div class="left">
           <h5>Nombre de prêteurs</h5>
         </div>
@@ -39,7 +45,7 @@
   </div>
   <div class="middle-box border-top border-beige">
     <div class="results">
-      <div class="top-results d-flex justify-content-between">
+      <div class="top-results d-flex justify-content-between mt-4">
         <div class="impact-box border border-primary ml-2 rounded text-center">
           <div class="first-row">
             -2°C
@@ -77,7 +83,7 @@
       </div>
     </div>
   </div>
-  <div class="bottom-box d-flex justify-content-center">
+  <div class="bottom-box d-flex justify-content-center mt-4">
     <%= link_to "Je finance", new_project_contract_path(project), class: "btn btn-primary" %>
       <!-- <button type="button" class="btn btn-primary">Je finance</button> -->
   </div>
