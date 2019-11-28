@@ -1,0 +1,38 @@
+.box-top {
+  h1 {
+    text-align: center;
+    color: $main;
+  }
+}
+
+.box-middle {
+  h2 {
+    text-align: center;
+    color: $main;
+  }
+}
+
+.text-right {
+  color: $highlight;
+}
+
+.eco-result-box {
+  width: 22%;
+}
+
+.first-row {
+  h3 {
+    color: $highlight;
+    font-weight: bold;
+  }
+}
+
+.second-row {
+  h5 {
+    font-weight: bold;
+  }
+}
+
+.contract-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
