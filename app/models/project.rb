@@ -26,5 +26,4 @@ class Project < ApplicationRecord
       errors.add(:project_type, 'must be in the list of defined projects type')
     end
   end
-
 end
