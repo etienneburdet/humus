@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update]
-  before_action :set_investment_gauge, only: %i[index search show]
   skip_before_action :authenticate_user!, only: %i[search show]
 
   def index
