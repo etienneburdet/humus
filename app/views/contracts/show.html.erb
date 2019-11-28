@@ -1,8 +1,11 @@
-<div>
+<!-- <div>
 <%= @contract.project.name %><br>
 <%= @contract.project.duration %><br>
 <%= @contract.investment %><br>
 <%= @contract.status %><br>
+</div> -->
+<div class="row mt-4 d-flex justify-content-center">
+  <div class="col-8">
+    <%= render 'shared/contract_card' %>
+  </div>
 </div>
-
-<%= render 'shared/contract_card' %>
