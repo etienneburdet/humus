@@ -86,7 +86,6 @@ mike.password_confirmation = 'valid_password'
 mike.username = 'Mike'
 mike.save!
 
-
 ferme = Project.new
 ferme.user = anna
 ferme.longitude = 2.6450
@@ -105,7 +104,6 @@ ferme.description = "<h4>Agriculteur depuis plusieurs années et en transition 1
 Mon but est donc de proposer un large choix de fruits et légumes tout au long de l'année au détail ou sous forme de paniers, dont le contenu variera au fil des saisons et selon la récolte et la disponibilité des produits.
 <br>Tous les dons que je vais recevoir vont me servir à financer une partie du matériel et de l'équipement dont j'aurai besoin pour commencer mon aventure, ainsi que de me donner la possibilité de convertir ma coltivation en bio."
 ferme.save!
-
 
 olivier = Project.new
 olivier.user = florence
@@ -271,6 +269,7 @@ indigene.description = "<h4>Une nouvelle forêt en gestion Miyawaka dans le fini
 <br>A l'heure où les forêts brûlent, il nous paraît essentiel de reboiser le département. Nous nous heurtons tous les jours aux questionnements, aux inquiétudes des parents pour l'avenir de leurs enfants.
 <br>Nous vous proposons d'agir avec nous, maintenant. Chacun de nous peut changer  l'avenir du monde. La collecte va servir à boiser deux parcelles, sous la forme d'une forêt composée d'arbres natif ainsi que d'une forêt comestible."
 indigene.save!
+
 
 contract_1 = Contract.new
 contract_1.user = raja
