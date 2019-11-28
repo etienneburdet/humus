@@ -23,11 +23,11 @@
 }
 
 .change-icon:hover .far,
-.change-icon:active .far{
+.change-icon:active .far {
   display: none;
 }
 .change-icon:hover .fas,
-.change-icon:active .fas{
+.change-icon:active .fas {
   display: block;
 }
 
@@ -39,4 +39,25 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+.progress-bar h5{
+  margin: 5px;
+}
+
+.change-div .back {
+  display: none;
+}
+
+.change-div:hover .front,
+.change-div:active .front {
+  display: none;
+}
+.change-div:hover .back,
+.change-div:active .back {
+  display: block;
+}
+
+.box-width {
+  width: 20%;
 }
