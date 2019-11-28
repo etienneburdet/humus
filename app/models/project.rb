@@ -26,7 +26,7 @@ class Project < ApplicationRecord
   private
 
   def type_in_list?
-    project_types = ['agriculture', 'forest']
+    project_types = ['agriculture', 'forest', 'haies']
     unless project_type && project_types.include?(project_type)
       errors.add(:project_type, 'must be in the list of defined projects type')
     end
