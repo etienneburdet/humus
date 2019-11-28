@@ -6,6 +6,7 @@
   <%= f.input :start_date %>
   <%= f.input :duration %>
   <%= f.input :project_type, collection: ['agriculture', 'forest'] %>
+  <%= f.input :photo, as: :file %>
 
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :latitude, as: :hidden %>

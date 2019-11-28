@@ -1,7 +1,3 @@
-h4 {
-  font-weight: bold;
-}
-
 .money-collected {
   .right {
     color: $highlight;
@@ -20,20 +16,10 @@ h4 {
   p {
     margin-top: 0;
     margin-bottom: 0;
-    padding-bottom: 5px;
-    font-size: 14px;
   }
   .first-row {
     color: $highlight;
     font-weight: bold;
-    padding-top: 5px;
-    font-size: 20px;
-  }
-}
-
-.left {
-  h5 {
-    font-size: 20px;
   }
 }
 
@@ -46,13 +32,8 @@ h4 {
   margin-right: 15px;
 }
 
-.btn {
-  margin-top: 23px;
-}
-
 .card-box {
   box-shadow: 5px 5px 8px rgba(0,0,0,.1);
   position: sticky;
   top: 60px;
 }
-

@@ -58,7 +58,7 @@ mike.password_confirmation = 'valid_password'
 mike.username = 'Mike'
 mike.save!
 
-
+file_ferme = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574939701/ivan-bandura-lhF8KI8fb84-unsplash_wthnnw.jpg')
 ferme = Project.new
 ferme.user = mike
 ferme.longitude = 2.6450
@@ -74,8 +74,11 @@ ferme.biodiversity = 2
 ferme.water_infiltration = 10_000
 ferme.local_food = 5
 ferme.description = "Une ferme dans l'Oise, qui cultive des fruits. Soutenez nous !"
+ferme.photo.attach(io: file_ferme, filename: 'ivan-bandura-lhF8KI8fb84-unsplash_wthnnw.jpg', content_type: 'image/jpg')
+
 ferme.save!
 
+file_foret = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574940272/lucas-gallone-Q4QjAPMpJRQ-unsplash_fesacp.jpg')
 foret = Project.new
 foret.user = paul
 foret.latitude = 48.7671
@@ -91,6 +94,7 @@ foret.biodiversity = 5
 foret.water_infiltration = 10_000
 foret.local_food = 0
 foret.description = "Une nouvelle forêt en gestion Miyawaka dans le finistère."
+foret.photo.attach(io: file_foret, filename: 'lucas-gallone-Q4QjAPMpJRQ-unsplash_fesacp.jpg')
 foret.save!
 
 contract_1 = Contract.new

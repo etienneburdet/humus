@@ -50,7 +50,8 @@ class ProjectsController < ApplicationController
                                     :start_date,
                                     :project_type,
                                     :latitude,
-                                    :longitude)
+                                    :longitude,
+                                    :photo)
   end
 
   def compute_bonus
