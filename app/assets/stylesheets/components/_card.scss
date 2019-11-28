@@ -1,60 +1,28 @@
 .project-card {
+  background-image: url('https://picsum.photos/200/300');
+  background-size: cover;
   width: 401px;
   height: 274px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
 }
 
-.project-card img {
-  height: 174px;
-  width: 100%;
-  fit: cover;
+.slide-up {
+  background: white;
+  opacity: 0.9;
+  margin-top: 7rem;
+  transition: all 0.3s ease;
 }
 
-.image-star-container img {
-  width: 100%;
-  height: 100%;
+.project-card:hover > .slide-up {
+  margin-top: 0;
+  opacity: 1;
 }
 
 .fav-star-pos {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.change-icon .fas {
-  display: none;
-}
-
-.change-icon:hover .far,
-.change-icon:active .far {
-  display: none;
-}
-
-.change-icon:hover .fas,
-.change-icon:active .fas {
-  display: block;
-}
-
-.favorite {
-  color: $highlight;
-}
-
-
-.progress-bar h5{
-  margin: 5px;
-}
-
-.change-div .back {
-  display: none;
-}
-
-.change-div:hover .front,
-.change-div:active .front {
-  display: none;
-}
-.change-div:hover .back,
-.change-div:active .back {
-  display: block;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 .impact-card {
