@@ -3,66 +3,8 @@
   <h2>Améliorez le quotidien de vos riverains</h2>
 </div>
 
-<div class="container my-5">
+<div class="container mx-auto">
   <%= render 'shared/search_bar' %>
-  <div class="my-container justify-content-around d-flex flex-wrap my-5">
-    <div class = "my-5">
-    <%= render 'shared/card' %>
-    </div>
-    <div class = "my-5">
-    <%= render 'shared/card' %>
-    </div>
-    <div class = "my-5">
-    <%= render 'shared/card' %>
-    </div>
-    <div class = "my-5">
-    <%= render 'shared/card' %>
-    </div>
-  </div>
+  <%= render 'shared/card' %>
 </div>
-  <div class = "d-flex justify-content-center my-5">
-    <button class="btn btn-primary">Tous nos projets</button>
-  </div>
-
-<div class = "secondary-background py-5">
-  <div class="concept-title text-center d-flex flex-column justify-content-center">
-    <h2>Concept</h2>
-  </div>
-    <div class = "container">
-      <div class = "concept-parts d-flex justify-content-around">
-        <div class= "col-2 text-center">
-          <img src="https://picsum.photos/200/300" alt="">
-          <h4>Découvrez les projets autour de vous</h4>
-        </div>
-        <div class= "col-2 text-center">
-          <img src="https://picsum.photos/200/300" alt="">
-          <h4>Investissez dans vos projets favoris</h4>
-        </div>
-        <div class= "col-2 text-center">
-          <img src="https://picsum.photos/200/300" alt="">
-          <h4>Suivez vos investissements</h4>
-        </div>
-        <div class= "col-2 text-center">
-          <img src="https://picsum.photos/200/300" alt="">
-          <h4>Recevez le calcul de votre impact</h4>
-        </div>
-      </div>
-    </div>
-</div>
-
-<div class="impact d-flex flex-column justify-content-center">
-  <div class="container d-flex justify-content-around text-center">
-    <div class= "elemental-impact d-flex flex-column justify-content-center">
-      <h2>1047</h2>
-      <h4>Projets financés</h4>
-    </div>
-    <div class= "elemental-impact d-flex flex-column justify-content-center">
-      <h2>683</h2>
-    <h4>Villes impactées</h4>
-    </div>
-    <div class= "elemental-impact d-flex flex-column justify-content-center">
-      <h2>16m€</h2>
-    <h4>collectés</h4>
-    </div>
-  </div>
-</div>
+<%= render 'shared/footer' %>
