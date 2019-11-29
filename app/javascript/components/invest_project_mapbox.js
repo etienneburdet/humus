@@ -38,6 +38,8 @@ const investProjectMapBox = () => {
       });
 
       const projectRadius = metersToPixelsAtMaxZoom(500, marker.lat);
+      const investRange = document.getElementById('investRange');
+
       map.addLayer({
         id: 'project-circle',
         type: 'circle',
@@ -56,20 +58,25 @@ const investProjectMapBox = () => {
       });
 
       map.addLayer({
-        id: 'investment-circle',
+        id: 'invest-circle',
         type: 'circle',
         source: 'project-point',
         paint: {
           "circle-radius": {
             stops: [
               [0, 0],
-              [20, projectRadius]
+              [20, projectRadius * investRange.value / 100]
             ],
             base: 2
           },
-          'circle-opacity': 0.3,
+          'circle-opacity': 0.8,
           'circle-color': '#87A878'
         }
+      });
+
+      investRange.addEventListener('input', (e) => {
+        e.preventDefault();
+        map.setPaintProperty(invertRange.value / 100, 'circle-radius');
       });
     });
   }

@@ -1,11 +1,19 @@
 
 <div class="container-fluid">
 <div class="row">
-  <div class="col">
+  <div class="col my-auto p-5">
     <%= simple_form_for [@project, @contract] do |f| %>
       <%= f.input :investment %>
-      <input type="range" id="investRange" class="custom-range" name="investRange" min="0" max="100" value="90" step="10">
-      <%= f.button :submit %>
+      <input  type="range"
+              id="investRange"
+              class="custom-range"
+              name="investRange"
+              min="0"
+              max="100"
+              value="90"
+              step="1"
+              data-cap="<%= @project.investment_cap %>">
+      <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
   <div
