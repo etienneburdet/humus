@@ -1,0 +1,34 @@
+
+// Specific CSS for your home-page
+
+.background-home-image {
+  height: 40rem;
+  background-image: image-url("Banner_sm.jpg");
+  color: $body-bg;
+}
+
+.concept-title {
+  height: 10rem;
+}
+
+.secondary-background {
+  background-color: $secondary;
+}
+
+.concept-parts img {
+  height: 10rem;
+  width: 100%;
+}
+
+.impact {
+  background-color: $main;
+  height: 40rem;
+}
+
+.elemental-impact {
+  border-radius: 50%;
+  background-color: $body-bg;
+  color: $body-color;
+  height: 15rem;
+  width: 15rem;
+}
