@@ -76,7 +76,13 @@ const investProjectMapBox = () => {
 
       investRange.addEventListener('input', (e) => {
         e.preventDefault();
-        map.setPaintProperty(invertRange.value / 100, 'circle-radius');
+        map.setPaintProperty('invest-circle', 'circle-radius', {
+          stops: [
+            [0, 0],
+            [20, projectRadius * investRange.value / 100]
+          ],
+          base: 2
+        });
       });
     });
   }
