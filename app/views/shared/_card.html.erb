@@ -1,44 +1,53 @@
-<div class="card project-card change-div my-2" style="background-image: url(<%= cl_image_path project.photo.key %>);">
 
-  <span class="change-icon">
-    <i class="fav-star-pos far fa-star fa-lg text-info"></i>
-    <i class="fav-star-pos fas fa-star fa-lg text-info"></i>
-  </span>
+  <div class="card project-card change-div my-2" style="background-image: url(<%= cl_image_path project.photo.key %>);">
 
-  <div class="card-body slide-up">
-    <h6 class="card-title font-weight-bold"><%= project.name %></h6>
-    <p class="card-text text-info"><%= project.city %></p>
-    <div class="money-total text-right">
-    <p><%= project.investment_cap %>€</p>
-    </div>
-    <div class="progress flex-grow-1" style="height: 12px;">
-      <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+    <span class="change-icon">
+      <i class="fav-star-pos far fa-star fa-lg text-info"></i>
+      <i class="fav-star-pos fas fa-star fa-lg text-info"></i>
+    </span>
 
-    <div>
-      <div class="d-flex justify-content-between my-4">
-        <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start px-1">
-          <p class="lead">-<%=  project.uhi %>°C</p>
-          <p class="small-text">Rafraichissement urbain</p>
+    <div class="card-body slide-up">
+      <h4 class="card-title font-weight-bold text-primary"><%= project.name %></h4>
+      <h5 class="card-text font-weight-bold text-info text-bold"><%= project.city %></h5>
+      <div class="above-bar-info d-flex justify-content-between">
+        <div class="text-left">
+          <p>J -<%= (project.start_date - Date.today).to_i %></p>
         </div>
-        <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start px-1">
-          <p class="lead"><%=  project.water_infiltration %>m³</p>
-          <p class="small-text">Infiltration d'eau</p>
-        </div>
-        <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start px-1">
-          <p class="lead"><%=  project.biodiversity %></p>
-          <p class="small-text">Biodiversité</p>
-        </div>
-        <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start px-1">
-          <p class="lead"><%=  project.local_food %>%</p>
-          <p class="small-text">Nourriture locale</p>
+        <div class="money-total text-right">
+          <h5><%= project.investment_cap %>€</h5>
         </div>
       </div>
-      <p class="text-center">J -<%= (project.start_date - Date.today).to_i %></p>
+      <div class="progress flex-grow-1" style="height: 12px;">
+        <div class="progress-bar"
+                 role="progressbar"
+                 style="width: <%=  project.investment.fdiv(project.investment_cap) * 100 %>%"
+                 aria-valuenow="<%=  project.investment.fdiv(project.investment_cap) * 100 %>"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+            </div>
+      </div>
 
-      <div class="bottom-box d-flex justify-content-center">
-        <a class="btn btn-primary">Je découvre</a>
+      <div>
+        <div class="d-flex justify-content-between my-4">
+          <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start">
+            <p class="lead font-weight-bold text-info pt-2">-<%=  project.uhi %>°C</p>
+            <p class="small-text">Chaleur urbain</p>
+          </div>
+          <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start">
+            <p class="lead font-weight-bold text-info pt-2"><%=  project.water_infiltration %>m³</p>
+            <p class="small-text">Infiltration d'eau</p>
+          </div>
+          <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start">
+            <p class="lead font-weight-bold text-info pt-2"><%=  project.biodiversity %></p>
+            <p class="small-text">Biodiversité</p>
+          </div>
+          <div class="impact-card border border-primary rounded text-center box-width d-flex flex-column justify-content-start">
+            <p class="lead font-weight-bold text-info pt-2"><%=  project.local_food %>%</p>
+            <p class="small-text">Nourriture locale</p>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
+
