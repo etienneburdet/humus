@@ -86,6 +86,7 @@ mike.password_confirmation = 'valid_password'
 mike.username = 'Mike'
 mike.save!
 
+file_ferme = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574962054/peter-wendt--r5KSMkyoSc-unsplash_ngfufj.jpg')
 ferme = Project.new
 ferme.user = anna
 ferme.longitude = 2.6450
@@ -103,27 +104,31 @@ ferme.local_food = 5
 ferme.description = "<h4>Agriculteur depuis plusieurs années et en transition 100%' BIO, je souhaite diversifier mon activité et vous proposer des fruits et légumes.</h4><br>
 Mon but est donc de proposer un large choix de fruits et légumes tout au long de l'année au détail ou sous forme de paniers, dont le contenu variera au fil des saisons et selon la récolte et la disponibilité des produits.
 <br>Tous les dons que je vais recevoir vont me servir à financer une partie du matériel et de l'équipement dont j'aurai besoin pour commencer mon aventure, ainsi que de me donner la possibilité de convertir ma coltivation en bio."
+ferme.photo.attach(io: file_ferme, filename: 'peter-wendt--r5KSMkyoSc-unsplash_ngfufj.jpg', content_type: 'image/jpg')
 ferme.save!
 
-olivier = Project.new
-olivier.user = florence
-olivier.latitude = 48.396090
-olivier.longitude = 2.071735
-olivier.surface = 53
-olivier.duration = 10
-olivier.investment_cap = 250_000
-olivier.start_date = Date.new(2020,3,15)
-olivier.project_type = 'agriculture'
-olivier.name = 'Exploitation bio de vignes'
-olivier.uhi = 3
-olivier.biodiversity = 2
-olivier.water_infiltration = 20_000
-olivier.local_food = 10
-olivier.description = "<h4>J'aimerai faire re-vivre la culture de vignes.</h4><br>Moi c'est Rémi, je suis âgé de 23 ans tout juste. Je me suis installé en agriculture biologique en 2018.<br>
+file_viniard = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1575024053/michel-stockman-RvvSt2tUQxE-unsplash_tmnnbk.jpg')
+viniard = Project.new
+viniard.user = florence
+viniard.latitude = 48.396090
+viniard.longitude = 2.071735
+viniard.surface = 53
+viniard.duration = 10
+viniard.investment_cap = 250_000
+viniard.start_date = Date.new(2020,3,15)
+viniard.project_type = 'agriculture'
+viniard.name = 'Exploitation bio de vignes'
+viniard.uhi = 3
+viniard.biodiversity = 2
+viniard.water_infiltration = 20_000
+viniard.local_food = 10
+viniard.description = "<h4>J'aimerai faire re-vivre la culture de vignes.</h4><br>Moi c'est Rémi, je suis âgé de 23 ans tout juste. Je me suis installé en agriculture biologique en 2018.<br>
 J'ai un projet pour valoriser ma ferme aux yeux de mes clients. Je veux remettre au goût du jour la culture de la vigne bio.<br>
 J'ai un projet de plantation d'un demi hectare, avec plusieurs variétés différentes : 4 à 5. La plantation s’effectuerait en début d'année 2020 pour une première récolte en 2022-2023 à peu près. "
-olivier.save!
+viniard.photo.attach(io: file_viniard, filename: 'michel-stockman-RvvSt2tUQxE-unsplash_tmnnbk.jpg', content_type: 'image/jpg')
+viniard.save!
 
+file_fruitiers = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1575021932/michael-weidner-tiPQCmdALWs-unsplash_eymwes.jpg')
 fruitiers = Project.new
 fruitiers.user = raja
 fruitiers.latitude = 48.853586
@@ -140,8 +145,10 @@ fruitiers.water_infiltration = 7_000
 fruitiers.local_food = 10
 fruitiers.description = "<h4>Participer à la plantation de 5500 arbres autour de nos jardins maraîchers et dans les poulaillers afin de créer un maillage de biodiversité.</h4><br>Nous sommes Mathilde et Raja, soucieux du bien-être animal, du respect de l'environnement et comme une envie de contribuer à ce retour vers une alimentation locale, saine et de qualité.
 C'est en 2016 que nous décidâmes de nous lancer dans le parcours d'installation d'une production de volailles de chair et d'oeufs fermiers en Agriculture Biologique. Nous faisons appel à votre générosité et votre soutien afin de nous aider à financer l'achat de 5 ha et d'un millier de fruitiers: pommiers, poiriers, pruniers, framboisiers etc.. en privilegiant des variétés locales!"
+fruitiers.photo.attach(io: file_fruitiers, filename: 'michael-weidner-tiPQCmdALWs-unsplash_eymwes.jpg', content_type: 'image/jpg')
 fruitiers.save!
 
+file_jardin = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1575024627/emiel-molenaar-c6___zGObUc-unsplash_wwojma.jpg')
 jardin = Project.new
 jardin.user = mike
 jardin.latitude = 48.520615
@@ -164,8 +171,10 @@ Mettre en valeur Dame Nature, donner un futur à ce bout de terre, apporter des 
 Rejoignez-moi dans ce projet et suivez le fil d’Ariane qui vous mènera à la découverte d’un jardin écologique en agro-foresterie.
 <br>« Je deviendrais garde forestier » disais-je quand j’étais gamin. Chemin faisant, me voici cotisant solidaire en plantes aromatiques et médicinales, installé depuis 5 ans.
 La collecte servira à étendre l’activité sur une surface totale de 12 hectares par l’acquisition d’un terrain. Planter sur ce jardin différentes essences d’arbres, créer un verger ancien, des collections diverses de plantes aromatiques et médicinales... Un lieu d’expression artistique avec la création de structures végétalisées."
+jardin.photo.attach(io: file_jardin, filename: 'emiel-molenaar-c6___zGObUc-unsplash_wwojma.jpg', content_type: 'image/jpg')
 jardin.save!
 
+file_pature = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574940272/lucas-gallone-Q4QjAPMpJRQ-unsplash_fesacp.jpg')
 pature = Project.new
 pature.user = vincent
 pature.latitude = 48.435239
@@ -184,8 +193,10 @@ pature.description = "<h4>Aidez-moi à aggrandir ma pâture et à réduire mon e
 Mon exploitation est exclusivement laitière, elle est composée de 65 vaches laitières et s’étend sur 85 hectares. Tout ce que je produis sur mon exploitation sert à nourrir mes animaux.
 <br>Les actions que je souhaite mettre en place afin de réduire mon empreinte carbone et de gagner en autonomie sont les suivantes: Implanter 20 ha de prairies supplémentaires autour du bâtiment d’élevage, afin que les vaches puissent davantage pâturer et ainsi diminuer leur consommation de maïs ensilage et de soja.
 Aménager le parcellaire, installer des clôtures, des abreuvoirs et mettre en place des chemins d’accès pour les vaches."
+pature.photo.attach(io: file_pature, filename: 'lucas-gallone-Q4QjAPMpJRQ-unsplash_fesacp.jpg', content_type: 'image/jpg')
 pature.save!
 
+file_bio = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1575024466/john-tuesday-t0vukuCtjpE-unsplash_hstump.jpg')
 bio = Project.new
 bio.user = lalita
 bio.latitude = 48.403393
@@ -206,8 +217,10 @@ quelques années pour les acheter lorsqu'elles sortent chez les pépiniéristes.
 Cette collecte va nous permettre de planter des variétés de pommes et poires en agriculture biologiques, sélectionnées pour leur rusticité, leur goût et conservation. Notre but est de sauvegarder des variétés locales, anciennes et rustiques. Mais aussi de planter des nouvelles variétés résistantes aux maladies et ravageurs courants. Nous souhaitons proposer des produits sans emballages et bio afin de répondre à une forte demande de la part de nos clients.
 Un des objectifs de notre projet est d'améliorer le bien-être environnant, notamment des habitations voisines. En effet, dans le cadre d'un verger biologique, l'absence de l'utilisation de pesticides suppriment toutes nuisances auprès des riverains. De plus, nous bénéficions ainsi de nombreux insectes auxilliaires (nombreuses coccinelles, syrphes, aphylénus mali, etc.) qui se nourrissent de pucerons. Cette biodiversité nous est bénéfique puisqu'elle permet
 d'avoir une culture saine et abondante."
+bio.photo.attach(io: file_bio, filename: 'john-tuesday-t0vukuCtjpE-unsplash_hstump.jpg', content_type: 'image/jpg')
 bio.save!
 
+file_insect = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574962270/jenna-lee-f0OL01IHbCM-unsplash_xobown.jpg')
 insect = Project.new
 insect.user = louis
 insect.latitude = 48.904744
@@ -229,9 +242,11 @@ Comme nous, les insectes ont besoin d’un toit et de nourriture qu’ils peuven
 <li>Des floraisons étalées riches en nectar et pollens,</li>
 <li>Une diversité de taille du buisson à l’arbre, connectées aux haies existantes</li><br>
 Avec ta contribution, je pourrai commencer mon projet déjà de ce printemps !"
+insect.photo.attach(io: file_insect, filename: 'jenna-lee-f0OL01IHbCM-unsplash_xobown.jpg', content_type: 'image/jpg')
 insect.save!
 
 
+file_abricots = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1575021836/margarita-zueva-LTXZ3omfBDE-unsplash_md4itd.jpg')
 abricots = Project.new
 abricots.user = jean
 abricots.latitude = 48.377393
@@ -249,8 +264,10 @@ abricots.local_food = 5
 abricots.description = "<h4>Une nouvelle production arboricole d'abricots, de pêches et de cerises juste à côté de Chartres.</h4><br>Je m'appelle Jean, j'ai 49 ans et je suis arboriculteur. Je produis sur mon exploitation des abricots, pêches et des cerises dans la belle région de Eure-et-Loire.<br>
 Concerné par l’impact environnemental de mon métier, je me lance dans l’audacieux projet de conversion biologique de ma production ! Pour pérenniser ce projet de transition de model modèle de production autour de l’alimentation durable, je compte racheter du matériel nécessaire à l’exploitation qui, je le rappelle,
 demande beaucoup de main d’œuvre. Ce matériel me permettra de gagner en confort de travail et en efficacité afin de proposer les meilleurs produits possibles aux consommateurs."
+abricots.photo.attach(io: file_abricots, filename: 'margarita-zueva-LTXZ3omfBDE-unsplash_md4itd.jpg', content_type: 'image/jpg')
 abricots.save!
 
+file_indigene = URI.open('https://res.cloudinary.com/dyvhgfc7l/image/upload/v1574962093/kazuend-19SC2oaVZW0-unsplash_znkt4m.jpg')
 indigene = Project.new
 indigene.user = robert
 indigene.latitude = 48.482989
@@ -268,6 +285,7 @@ indigene.local_food = 5
 indigene.description = "<h4>Une nouvelle forêt en gestion Miyawaka dans le finistère.</h4><br>Salut !<br>Nous sommes 3 amis qui ont récemment découvert les principes du botaniste japonais Miyawaki. Ils consistent à mettre les plantes en synergie afin de recréer des forêts indigènes (constituées de plantes locales) qui poussent plus vite, absorbent plus de CO2, restituent plus d'oxygène.
 <br>A l'heure où les forêts brûlent, il nous paraît essentiel de reboiser le département. Nous nous heurtons tous les jours aux questionnements, aux inquiétudes des parents pour l'avenir de leurs enfants.
 <br>Nous vous proposons d'agir avec nous, maintenant. Chacun de nous peut changer  l'avenir du monde. La collecte va servir à boiser deux parcelles, sous la forme d'une forêt composée d'arbres natif ainsi que d'une forêt comestible."
+indigene.photo.attach(io: file_indigene, filename: 'kazuend-19SC2oaVZW0-unsplash_znkt4m.jpg', content_type: 'image/jpg')
 indigene.save!
 
 
