@@ -1,13 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-4">
+<div class="container-fluid pr-0">
+  <div class="col-12 m-2 text-primary">
+    <h1>Results</h1>
+  </div>
+  <div class="row ml-2">
+    <div class="col-6">
       <ul>
         <% @projects.each do |project| %>
           <li><%= link_to project.name, project_path(project) %> </li>
         <% end %>
       </ul>
     </div>
-    <div class="col-8">
+    <div class="col-6">
       <div
         id="searchProjectMap"
         style="width: 100%; height: 600px;"
