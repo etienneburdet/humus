@@ -7,16 +7,16 @@
   <%= render 'shared/search_bar' %>
   <div class="my-container justify-content-around d-flex flex-wrap my-5">
     <div class = "my-5">
-    <%= render 'shared/card' %>
+      <%= render 'shared/card', project: @projects.first %>
     </div>
     <div class = "my-5">
-    <%= render 'shared/card' %>
+      <%= render 'shared/card', project: @projects.last %>
     </div>
     <div class = "my-5">
-    <%= render 'shared/card' %>
+      <%= render 'shared/card', project: @projects.second %>
     </div>
     <div class = "my-5">
-    <%= render 'shared/card' %>
+      <%= render 'shared/card', project: @projects.third %>
     </div>
   </div>
 </div>
