@@ -30,7 +30,7 @@
           <h5>Jour(s) restant(s)</h5>
         </div>
         <div class="right">
-          <h5>30</h5>
+          <h5><%= (project.start_date - Date.today).to_i %></h5>
         </div>
       </div>
       <div class="investors d-flex justify-content-between mb-3">
@@ -38,7 +38,7 @@
           <h5>Nombre de prêteurs</h5>
         </div>
         <div class="right">
-          <h5>9</h5>
+          <h5><%=  project.contracts.lenght %></h5>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       <div class="top-results d-flex justify-content-between mt-4">
         <div class="impact-box border border-primary ml-2 rounded text-center p-2">
           <div class="first-row">
-            -2°C
+            -<%=  project.uhi %>°C
           </div>
           <p>
             Chaleur Urbain
@@ -56,7 +56,7 @@
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
           <div class="first-row">
-            900m³
+            <%=  project.water_infiltration %>m³
           </div>
           <p>
             Infiltration d'eau
@@ -66,7 +66,7 @@
       <div class="bottom-results d-flex justify-content-between mt-2">
         <div class="impact-box border border-primary ml-2 rounded text-center p-2">
           <div class="first-row">
-            0.6
+            <%=  project.biodiversity %>
           </div>
           <p>
             Biodiversité
@@ -74,7 +74,7 @@
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
           <div class="first-row">
-            4.5%
+            <%=  project.local_food %>%
           </div>
           <p>
             Nourriture Locale

@@ -3,7 +3,11 @@ class Project < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
 
-  reverse_geocoded_by :latitude, :longitude
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      obj.city    = geo.city
+    end
+  end
   after_validation :reverse_geocode
 
   validates :surface, presence: true, numericality: { only_integer: true }, allow_blank: false
