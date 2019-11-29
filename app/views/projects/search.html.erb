@@ -4,11 +4,10 @@
   </div>
   <div class="row ml-2">
     <div class="col-6">
-      <ul>
         <% @projects.each do |project| %>
-          <li><%= link_to project.name, project_path(project) %> </li>
+        <%= render 'shared/card', project: project %>
+
         <% end %>
-      </ul>
     </div>
     <div class="col-6">
       <div
