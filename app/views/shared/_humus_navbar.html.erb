@@ -1,18 +1,16 @@
-<div class ="">
-  <div class="humus-navbar d-flex justify-content-between align-items-center my-2 mx-2">
-    <div class="left d-flex">
+<div class="humus-navbar d-flex justify-content-between align-items-center">
+  <div class="left d-flex align-items-center ml-4 mt-2">
 
-        <%= link_to root_path do %>
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-        <% end %>
-      <div class= "d-flex flex-column justify-content-center">
-      <%= link_to "Projets", projects_path, class: "nav-item nav-link" %>
-      <!-- <a class="nav-item nav-link" href="projects">Projets</a> -->
-      </div>
-      <a class="nav-item nav-link d-flex flex-column justify-content-center" href="#">Concept</a>
-    </div>
-    <div class="right">
-      <a class="nav-item nav-link d-flex flex-column justify-content-center" href="#">Profile</a>
-    </div>
+
+    <%= link_to root_path do %>
+      <%= image_tag "planet_logo.png" %>
+    <% end %>
+    <%= link_to "Projets", projects_path, class: "nav-item nav-link" %>
+    <!-- <a class="nav-item nav-link" href="projects">Projets</a> -->
+    <a class="nav-item nav-link" href="#">Concept</a>
+  </div>
+  <div class="right mr-4 mt-2">
+    <a class="nav-item nav-link" href="#">Profile</a>
+
   </div>
 </div>
