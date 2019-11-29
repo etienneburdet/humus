@@ -1,4 +1,18 @@
-<%= simple_form_for [@project, @contract] do |f| %>
-  <%= f.input :investment %>
-  <%= f.button :submit %>
-<% end %>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col">
+    <%= simple_form_for [@project, @contract] do |f| %>
+      <%= f.input :investment %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+  <div
+    class="col"
+    id="investProjectMap"
+    style="width: 100%; height: 100vh;"
+    data-marker="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
+</div>

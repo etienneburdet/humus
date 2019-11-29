@@ -11,6 +11,10 @@ class ContractsController < ApplicationController
 
   def new
     @contract = Contract.new
+    @marker = {
+      lat: @project.latitude,
+      lng: @project.longitude
+    }
   end
 
   def create
