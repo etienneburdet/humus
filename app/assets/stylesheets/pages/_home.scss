@@ -2,13 +2,13 @@
 // Specific CSS for your home-page
 
 .background-home-image {
-  height: 40rem;
+  height: 73vh;
   background-image: image-url("Banner_sm.jpg");
   color: $body-bg;
 }
 
 .concept-title {
-  height: 10rem;
+  height: 15vh;
 }
 
 .secondary-background {
@@ -20,9 +20,13 @@
   width: 100%;
 }
 
+.concept-parts h6 {
+  margin-top: 1rem;
+}
+
 .impact {
   background-color: $main;
-  height: 40rem;
+  height: 66vh;
 }
 
 .elemental-impact {
