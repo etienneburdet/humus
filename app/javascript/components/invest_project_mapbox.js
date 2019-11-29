@@ -21,6 +21,30 @@ const investProjectMapBox = () => {
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
     fitMapToMarker(map, marker);
+
+    map.on('load', () => {
+      map.addSource('project-point', {
+        "type": "geojson",
+        "data": {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [ marker.lng, marker.lat ]
+          },
+        }
+      });
+
+      map.addLayer({
+        id: 'historical-places',
+        type: 'circle',
+        source: 'project-point',
+        paint: {
+          'circle-radius': 200,
+          'circle-opacity': 0.8,
+          'circle-color': 'rgb(171, 72, 33)'
+        }
+      });
+    });
   }
 };
 
