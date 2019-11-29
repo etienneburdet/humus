@@ -4,6 +4,7 @@
   <div class="col">
     <%= simple_form_for [@project, @contract] do |f| %>
       <%= f.input :investment %>
+      <input type="range" id="investRange" class="custom-range" name="investRange" min="0" max="100" value="90" step="10">
       <%= f.button :submit %>
     <% end %>
   </div>

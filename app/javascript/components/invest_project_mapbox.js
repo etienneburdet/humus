@@ -2,11 +2,14 @@ import mapboxgl from 'mapbox-gl';
 
 const investProjectMapBox = () => {
   const mapElement = document.getElementById('investProjectMap');
+  const metersToPixelsAtMaxZoom = (meters, latitude) => {
+    return meters / 0.075 / Math.cos(latitude * Math.PI / 180)
+  };
 
   const fitMapToMarker = (map, marker) => {
     const bounds = new mapboxgl.LngLatBounds();
     bounds.extend([ marker.lng, marker.lat ]);
-    map.fitBounds(bounds, { padding: 100, maxZoom: 15, duration: 0 });
+    map.fitBounds(bounds, { padding: 100, maxZoom: 14, duration: 0 });
   };
 
   if (mapElement) {
@@ -34,14 +37,38 @@ const investProjectMapBox = () => {
         }
       });
 
+      const projectRadius = metersToPixelsAtMaxZoom(500, marker.lat);
       map.addLayer({
-        id: 'historical-places',
+        id: 'project-circle',
         type: 'circle',
         source: 'project-point',
         paint: {
-          'circle-radius': 200,
-          'circle-opacity': 0.8,
-          'circle-color': 'rgb(171, 72, 33)'
+          "circle-radius": {
+            stops: [
+              [0, 0],
+              [20, projectRadius]
+            ],
+            base: 2
+          },
+          'circle-opacity': 0.3,
+          'circle-color': '#87A878'
+        }
+      });
+
+      map.addLayer({
+        id: 'investment-circle',
+        type: 'circle',
+        source: 'project-point',
+        paint: {
+          "circle-radius": {
+            stops: [
+              [0, 0],
+              [20, projectRadius]
+            ],
+            base: 2
+          },
+          'circle-opacity': 0.3,
+          'circle-color': '#87A878'
         }
       });
     });
