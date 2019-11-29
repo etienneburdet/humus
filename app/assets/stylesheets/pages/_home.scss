@@ -11,7 +11,7 @@ body {
 
 .background-home-image {
   height: 40rem;
-  background-image: "../../images/Banner_sm.jpg";
+  background-image: image-url("Banner_sm.jpg");
   color: $body-bg;
 }
 
