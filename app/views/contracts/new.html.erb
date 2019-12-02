@@ -5,12 +5,24 @@
       <div class="col-6 d-flex flex-column">
         <div class="variable-impact d-flex flex-column">
           <div class="impact-top d-flex justify-content-between">
-            <p class="impact-calculation" data-value="<%= @project.uhi %>"><%= @project.uhi %></p>
-            <p class="impact-calculation" data-value="<%= @project.water_infiltration %>"><%= @project.water_infiltration %></p>
+            <div class="impact-calculation border border-primary rounded text-center m-2 p-2" data-value="<%= @project.uhi %>">
+              <h4>-<%= @project.uhi %>°C</h4>
+              <h5>Chaleur Urbain</h5>
+            </div>
+            <div class="impact-calculation border border-primary rounded text-center m-2 p-2" data-value="<%= @project.water_infiltration %>">
+              <h4><%= @project.water_infiltration %>m³</h4>
+              <h5>Infiltration d'eau</h5>
+            </div>
           </div>
           <div class="impact-bottom d-flex justify-content-between">
-            <p class="impact-calculation" data-value="<%= @project.biodiversity %>"><%= @project.biodiversity %></p>
-            <p class="impact-calculation" data-value="<%= @project.local_food %>"><%= @project.local_food %></p>
+            <div class="impact-calculation border border-primary rounded text-center m-2 p-2" data-value="<%= @project.biodiversity %>">
+              <h4><%= @project.biodiversity %></h4>
+              <h5>Biodiversité</h5>
+            </div>
+            <div class="impact-calculation border border-primary rounded text-center m-2 p-2" data-value="<%= @project.local_food %>">
+              <h4><%= @project.local_food %>%</h4>
+              <h5>Nourriture Locale</h5>
+            </div>
           </div>
       </div>
         <div class="inv-input">
