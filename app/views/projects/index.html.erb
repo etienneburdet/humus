@@ -5,3 +5,22 @@
 </div>
 
 <% end %>
+
+===============================================
+
+<% @projects.each do |proj| %>
+
+<% is_favorite = false %>
+<% Favorite.all.each do |f| %>
+<% if f.project_id == proj.id %>
+<% is_favorite = true %>
+<% end %>
+<% end %>
+
+<% if is_favorite %>
+<%= ("#{proj.id}") %>
+<%= ("#{proj.name}") %>
+
+<% end %>
+
+<% end %>

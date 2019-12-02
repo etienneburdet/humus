@@ -11,4 +11,7 @@ createProjectMapBox();
 searchProjectMapBox();
 investProjectMapBox();
 initAutocomplete();
-bindRangeValue();
+const slider = document.getElementById('investRange');
+if (slider) {
+  bindRangeValue();
+}

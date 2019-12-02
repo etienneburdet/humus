@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :contracts, only: %i[new create]
   end
   resources :contracts, only: %i[index show]
+  resources :favorites, only: %i[destroy create]
 end

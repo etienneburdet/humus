@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :contracts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   belongs_to :user
   has_one_attached :photo
 
@@ -27,6 +28,10 @@ class Project < ApplicationRecord
     update(investment: investment)
   end
 
+  def liked_by_current_user?(current_user)
+    favorites.where(project: self, user: current_user).count < 1
+  end
+
   private
 
   def type_in_list?
@@ -35,4 +40,5 @@ class Project < ApplicationRecord
       errors.add(:project_type, 'must be in the list of defined projects type')
     end
   end
+
 end
