@@ -1,6 +1,21 @@
-.impact-calculation {
-  width: 50%;
+.imp-box {
+  width: 45%;
+}
+
+.impact-top {
   h4 {
     color: $highlight;
+    font-weight: bold;
   }
+}
+
+.impact-bottom {
+  h4 {
+    color: $highlight;
+    font-weight: bold;
+  }
+}
+
+.result-title {
+  color: $main;
 }
