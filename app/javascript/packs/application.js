@@ -12,15 +12,3 @@ searchProjectMapBox();
 investProjectMapBox();
 initAutocomplete();
 bindRangeValue();
-
-
-// const initCalcul = () => {
-//   const form = document.querySelector('#new_contract');
-//   const input = document.querySelector('#contract_investment')
-
-//   form.addEventListener('change', (e) => {
-
-//   })
-// }
-
-// initSlider();

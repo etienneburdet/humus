@@ -19,7 +19,7 @@ const bindRangeValue = () => {
 
 const calcul = (value, cap) => {
   let perc = (value / cap)
-  const impacts = document.querySelectorAll('.impact')
+  const impacts = document.querySelectorAll('.impact-calculation')
 
   impacts.forEach((item) => {
     const v = parseInt(item.dataset.value, 10) * perc
