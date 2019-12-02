@@ -7,6 +7,7 @@ const bindRangeValue = () => {
     investRange.addEventListener('input', e => {
       e.preventDefault();
       investInput.value = investRange.value * investCap / 100;
+      calcul((investRange.value * investCap / 100), investCap)
     });
 
     investInput.addEventListener('input', e => {
@@ -15,5 +16,15 @@ const bindRangeValue = () => {
     });
   }
 };
+
+const calcul = (value, cap) => {
+  let perc = (value / cap)
+  const impacts = document.querySelectorAll('.impact')
+
+  impacts.forEach((item) => {
+    const v = parseInt(item.dataset.value, 10) * perc
+    item.innerText = v
+  })
+}
 
 export { bindRangeValue };
