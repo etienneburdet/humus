@@ -1,8 +1,8 @@
 
   <div class="card project-card change-div my-2" style="background-image: url(<%= cl_image_path project.photo.key %>);">
     <%= link_to "", project_path(project) %>
-    <span id="<%= project.id %>" class="change-icon" style="z-index: 10">
-      <%= render 'shared/like_unlike', project: project %>
+    <span id="like-project-<%= project.id %>" class="change-icon" style="z-index: 10">
+      <%= render 'shared/like_unlike', project: project, user: current_user %>
     </span>
 
     <div class="card-body slide-up">

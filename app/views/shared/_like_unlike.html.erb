@@ -1,13 +1,13 @@
-<% if project.liked_by_current_user?(current_user) %>
+<% if project.liked_by_current_user?(user) %>
+  <i class="fas fa-star fa-lg fav-star-pos text-info"></i>
+  <%= simple_form_for(Favorite.new, url: favorite_path(project), method: :delete, remote: true) do |f| %>
+    <%= f.submit "Delete" %>
+    <%= f.input :project, :as => :hidden, :input_html => { :value => project.id } %>
+  <% end %>
+<% else %>
   <i class="far fa-star fa-lg fav-star-pos text-info"></i>
   <%= simple_form_for(Favorite.new, url: favorites_path, method: :post, remote: true) do |f| %>
     <%= f.submit %>
     <%= f.input :project, :as => :hidden, :input_html => { :value => project.id } %>
   <% end %>
-<% else %>
-  <%= simple_form_for(Favorite.new, url: favorite_path(project), method: :delete, remote: true) do |f| %>
-    <%= f.submit "Delete" %>
-    <%= f.input :project, :as => :hidden, :input_html => { :value => project.id } %>
-  <% end %>
-  <i class="fas fa-star fa-lg fav-star-pos text-info"></i>
 <% end %>

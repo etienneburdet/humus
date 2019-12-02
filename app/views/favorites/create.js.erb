@@ -1,1 +1,14 @@
-console.log('creating');
+function refreshForm(innerHTML) {
+  const newLikeForm = document.getElementById('like-project-<%=@project.id%>');
+  newLikeForm.innerHTML = innerHTML;
+}
+
+// const project_span = document.querySelector('.change-icon');
+// const project_id = project_span.id;
+
+// function addReview(reviewHTML) {
+//   const reviews = document.getElementById('reviews');
+//   reviews.insertAdjacentHTML('beforeend', reviewHTML);
+// }
+
+refreshForm('<%= j render "shared/like_unlike", project: @project, user: @user %>');

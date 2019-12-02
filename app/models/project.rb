@@ -29,7 +29,7 @@ class Project < ApplicationRecord
   end
 
   def liked_by_current_user?(current_user)
-    favorites.where(project: self, user: current_user).count < 1
+    favorites.find_by(project: self, user: current_user).present?
   end
 
   private
