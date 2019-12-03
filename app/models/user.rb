@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
   has_many :contracts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
