@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :set_contract, only: %i[show]
+  before_action :set_contract, only: %i[show send_facturation]
   before_action :set_project, only: %i[new create]
 
   def index
@@ -31,6 +31,10 @@ class ContractsController < ApplicationController
     redirect_to contract_path(@contract)
   end
 
+  def send_facturation
+    mail = UserMailer.with(user: current_user, contract: @contract).facturation.deliver_now
+    redirect_to contract_path(@contract)
+  end
 
 
   private
