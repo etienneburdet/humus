@@ -8,7 +8,7 @@
     </span>
 
     <div class="card-body slide-up">
-      <h4 class="card-title font-weight-bold text-primary"><%= project.name %></h4>
+      <h4 class="card-title font-weight-bold text-primary"><%= truncate(project.name, length: 30) %></h4>
       <h5 class="card-text font-weight-bold text-info text-bold"><%= project.city %></h5>
       <div class="above-bar-info d-flex justify-content-between">
         <div class="text-left">
