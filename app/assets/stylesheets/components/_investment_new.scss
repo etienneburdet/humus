@@ -1,0 +1,31 @@
+.imp-box {
+  width: 45%;
+}
+
+.impact-top {
+  h4 {
+    color: $highlight;
+    font-weight: bold;
+  }
+}
+
+.impact-bottom {
+  h4 {
+    color: $highlight;
+    font-weight: bold;
+  }
+}
+
+.result-title {
+  color: $main;
+}
+
+#new_contract {
+  label {
+    font-size: 1.3em;
+  }
+
+  input {
+    font-size: 1.3em;
+  }
+}
