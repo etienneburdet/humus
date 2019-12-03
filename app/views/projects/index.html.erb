@@ -3,6 +3,7 @@
 <div class="d-flex justify-content-around flex-wrap">
 
 <% @projects.each do |project| %>
+
 <% if project.liked_by_current_user?(current_user) %>
 
 <div class="container-left">
@@ -11,28 +12,7 @@
       <%= render 'shared/card', project: project %>
 
     </div>
-
-<div class="container pt-4">
-  <li><%= link_to project.name, project_path(project) %> </li>
 </div>
-  <div class="background-projects-image">
-  </div>
-<% end %>
-
-<% @projects.each do |proj| %>
-
-<% is_favorite = false %>
-<% Favorite.all.each do |f| %>
-<% if f.project_id == proj.id %>
-<% is_favorite = true %>
-<% end %>
-<% end %>
-
-<% if is_favorite %>
-<%= ("#{proj.id}") %>
-<%= ("#{proj.name}") %>
-
-<% end %>
 
 <% end %>
 
