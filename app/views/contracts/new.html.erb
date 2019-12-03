@@ -1,28 +1,56 @@
 
 <div class="container-fluid">
-  <h2><%= @project.name %></h2>
-<div class="row">
-  <div class="col my-auto p-5">
-    <%= simple_form_for [@project, @contract] do |f| %>
-      <%= f.input :investment %>
-      <input  type="range"
-              id="investRange"
-              class="custom-range"
-              name="investRange"
-              min="0"
-              max="100"
-              value="90"
-              step="1"
-              data-cap="<%= @project.investment_cap %>">
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+  <h1 class="result-title text-center mb-4"><%= @project.name %></h1>
+    <div class="row">
+      <div class="col-6 d-flex flex-column">
+        <div class="variable-impact d-flex flex-column mb-4">
+          <div class="impact-top d-flex justify-content-between">
+            <div class="imp-box border border-primary rounded text-center m-2 p-2">
+              <h4>-<span class="impact-calculation" data-value="<%= @project.uhi %>"><%= @project.uhi %></span>°C</h4>
+              <h5>Chaleur Urbain</h5>
+            </div>
+            <div class="imp-box border border-primary rounded text-center m-2 p-2">
+              <h4><span class="impact-calculation" data-value="<%= @project.water_infiltration %>"><%= @project.water_infiltration %></span>m³</h4>
+              <h5>Infiltration d'eau</h5>
+            </div>
+          </div>
+          <div class="impact-bottom d-flex justify-content-between">
+            <div class="imp-box border border-primary rounded text-center m-2 p-2">
+              <h4><span class="impact-calculation" data-value="<%= @project.biodiversity %>"><%= @project.biodiversity %></span></h4>
+              <h5>Biodiversité</h5>
+            </div>
+            <div class="imp-box border border-primary rounded text-center m-2 p-2">
+              <h4><span class="impact-calculation" data-value="<%= @project.local_food %>"><%= @project.local_food %></span>%</h4>
+              <h5>Nourriture Locale</h5>
+            </div>
+          </div>
+      </div>
+        <div class="inv-input mt-4">
+          <%= simple_form_for [@project, @contract] do |f| %>
+            <%= f.input :investment, label: "Montant de votre investissement - €" %>
+            <input  type="range"
+                    id="investRange"
+                    class="custom-range"
+                    name="investRange"
+                    min="0"
+                    max="100"
+                    value="90"
+                    step="1"
+                    data-cap="<%= @project.investment_cap %>">
+            <%= f.submit "Je finance", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <div
+        class="col-6"
+        id="investProjectMap"
+        style="width: 100%; height: 80vh;"
+        data-marker="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
   </div>
-  <div
-    class="col"
-    id="investProjectMap"
-    style="width: 100%; height: 100vh;"
-    data-marker="<%= @marker.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
 </div>
-</div>
+
+
+<!-- <div class="page-grid d-flex flex-column border border-beige p-4 rounded"> -->

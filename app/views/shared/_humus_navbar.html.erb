@@ -9,6 +9,11 @@
     <a class="nav-item nav-link" href="#">Concept</a>
   </div>
   <div class="right mr-4">
-    <a class="nav-item nav-link" href="#">Profile</a>
+    <% if current_user %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+    <% end %>
+    <!-- <a class="nav-item nav-link" href="#">Profile</a> -->
   </div>
 </div>
