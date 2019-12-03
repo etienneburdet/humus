@@ -8,6 +8,7 @@ class UserMailer < ApplicationMailer
   def facturation
     @user = params[:user]
     @contract = params[:contract]
+
     # @project = @contract.project
     mail(to: @user.email, subject: 'Facture Humus')
   end
