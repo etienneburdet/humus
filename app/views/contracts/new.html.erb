@@ -27,7 +27,7 @@
       </div>
         <div class="inv-input mt-4">
           <%= simple_form_for [@project, @contract] do |f| %>
-            <%= f.input :investment %>
+            <%= f.input :investment, label: "Montant de votre investissement - €" %>
             <input  type="range"
                     id="investRange"
                     class="custom-range"
@@ -37,7 +37,7 @@
                     value="90"
                     step="1"
                     data-cap="<%= @project.investment_cap %>">
-            <%= f.button :submit, class: "btn btn-primary" %>
+            <%= f.submit "Je finance", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
