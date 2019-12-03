@@ -16,5 +16,6 @@ const slider = document.getElementById('investRange');
 if (slider) {
   bindRangeValue();
 }
+
 updateFavorite();
 window.updateFavorite = updateFavorite;

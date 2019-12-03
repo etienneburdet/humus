@@ -7,6 +7,11 @@ class ContractsController < ApplicationController
   end
 
   def show
+    perc_investment
+    @uhi = @perc * @contract.project.uhi
+    @water_infiltration = @perc * @contract.project.water_infiltration
+    @biodiversity = @perc * @contract.project.biodiversity
+    @local_food = @perc * @contract.project.local_food
   end
 
   def new
@@ -40,5 +45,9 @@ class ContractsController < ApplicationController
 
   def contract_params
     params.require(:contract).permit(:investment)
+  end
+
+  def perc_investment
+    @perc = @contract.investment.fdiv(@contract.project.investment_cap)
   end
 end
