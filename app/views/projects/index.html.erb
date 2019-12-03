@@ -1,12 +1,23 @@
+<h1 class="text-center text-primary my-5">Vos projets favoris</h1>
+
+<div class="d-flex justify-content-around flex-wrap">
+
 <% @projects.each do |project| %>
+<% if project.liked_by_current_user?(current_user) %>
+
+<div class="container-left">
+    <div class = "my-5">
+
+      <%= render 'shared/card', project: project %>
+
+    </div>
+
 <div class="container pt-4">
   <li><%= link_to project.name, project_path(project) %> </li>
 </div>
   <div class="background-projects-image">
   </div>
 <% end %>
-
-===============================================
 
 <% @projects.each do |proj| %>
 
@@ -24,3 +35,7 @@
 <% end %>
 
 <% end %>
+
+<% end %>
+
+</div>
