@@ -50,8 +50,8 @@
           <div class="first-row">
             -<%=  project.uhi %>°C
           </div>
-          <p>
-            Chaleur Urbain
+          <p data-toggle="tooltip" title="Baisse de la temperature moyenne en ville">
+            Chaleur Urbain<br><i class="far fa-question-circle"></i>
           </p>
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
@@ -59,7 +59,8 @@
             <%=  project.water_infiltration %>m³
           </div>
           <p>
-            Infiltration d'eau
+            <p data-toggle="tooltip" title="Mesure de la vitesse à laquelle le sol est capable d'absorber la pluie ou l'irrigation.">
+            Infiltration d'eau<br><i class="far fa-question-circle"></i>
           </p>
         </div>
       </div>
@@ -69,15 +70,18 @@
             <%=  project.biodiversity %>
           </div>
           <p>
-            Biodiversité
+            <p data-toggle="tooltip" title="Cet indice donne une idée de la diversité spécifique d'un milieu.
+          C'est-à-dire du nombre d'espèces de ce milieu (richesse spécifique) et de la répartition des individus au sein de ces espèces">
+            Biodiversité<br><i class="far fa-question-circle"></i>
           </p>
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
           <div class="first-row">
+            <p data-toggle="tooltip" title="Augmentation de la production alimentaire locale lié au projet">
             <%=  project.local_food %>%
           </div>
           <p>
-            Nourriture Locale
+            Nourriture Locale<br><i class="far fa-question-circle"></i>
           </p>
         </div>
       </div>
