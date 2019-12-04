@@ -19,7 +19,8 @@ const initSortable = () => {
 
   const tableBody = document.querySelector('tbody')
   const rows = Array.from(document.querySelectorAll('tbody > tr'));
-  const headers = Array.from(document.querySelectorAll('thead > tr > th'))
+  const headers = Array.from(document.querySelectorAll('thead > tr > th'));
+  headers.shift();
 
   const compareRows = (idx) => {
     return (row1, row2) => {
@@ -32,11 +33,22 @@ const initSortable = () => {
   const sortRows = (idx) => {
     return (e) => {
       e.preventDefault();
+      headers.forEach( (header) => {
+          if (header === headers[idx] ) {
+            header.querySelector('i').classList.add('fa-sort-down', 'selected-column');
+          } else {
+            header.querySelector('i').classList.remove('selected-column', 'fa-sort-down');
+          }
+      });
       rows.sort(compareRows(idx)).forEach( tr => tableBody.appendChild(tr));
     };
   };
 
-  headers.forEach( (th, idx) => th .addEventListener('click', sortRows(idx)));
+  const showSortIcon = (e) => {
+    e.target.querySelector('i').classList.add('fa-sort')
+  };
+
+  headers.forEach( (th, idx) => th.addEventListener('click', sortRows(idx)));
 };
 
 export { initSortable };

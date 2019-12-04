@@ -7,6 +7,15 @@
   width: 100%;
 }
 
-.over-row {
-  transition: all 200ms ease;
+.sort-icon {
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.selected-column {
+  opacity: 100;
+}
+
+.sort-title:hover .sort-icon {
+  opacity: 100;
 }
