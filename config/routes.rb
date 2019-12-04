@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
   resources :contracts, only: %i[index show]
   resources :favorites, only: %i[destroy create]
+
+  get 'contracts/:id/send_facturation', to: 'contracts#send_facturation', as: :send_facturation
+
 end
