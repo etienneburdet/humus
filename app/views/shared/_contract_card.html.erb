@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="box-bottom d-flex justify-content-center">
-      <a class="btn btn-primary" href="#">Télécharger Facture</a>
+      <%= link_to "Envoyer Facture", send_facturation_path(contract), remote: true %>
     </div>
   </div>
 </div>
