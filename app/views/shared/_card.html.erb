@@ -1,5 +1,5 @@
 
-  <div class="card project-card change-div my-2" style="background-image: url(<%= cl_image_path project.photo.key %>);">
+  <div class="card border-0 project-card change-div my-2" style="background-image: url(<%= cl_image_path project.photo.key %>);">
     <%= link_to "", project_path(project) %>
 
     <span id="like-project-<%= project.id %>" class="change-icon" style="height: 0px">
