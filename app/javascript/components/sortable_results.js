@@ -10,15 +10,22 @@ const initSortable = () => {
   const rows = Array.from(document.querySelectorAll('tbody > tr'));
   const headers = Array.from(document.querySelectorAll('thead > tr > th'))
 
-  const compareRows = (row1, row2) => {
-    console.log('Hello from sort rows');
-    const diff = row2.children[1].innerText - row1.children[1].innerText;
-    return diff;
+  const compareRows = (idx) => {
+    return (row1, row2) => {
+      const diff = row2.children[idx].innerText - row1.children[idx].innerText;
+      return diff;
+    };
   };
 
-  const sortRows = (e) => rows.sort(compareRows).forEach( tr => tableBody.appendChild(tr));
 
-  headers.forEach( th => th.addEventListener('click', sortRows));
+  const sortRows = (idx) => {
+    return (e) => {
+      e.preventDefault();
+      rows.sort(compareRows(idx)).forEach( tr => tableBody.appendChild(tr));
+    };
+  };
+
+  headers.forEach( (th, idx) => th .addEventListener('click', sortRows(idx)));
 };
 
 export { initSortable };
