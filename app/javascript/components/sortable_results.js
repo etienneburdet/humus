@@ -6,6 +6,10 @@ const initSortable = () => {
     draggable: 'tr',
   });
 
+  sortable.on('sortable:start', (e) => {
+    e.dragEvent.source.classList.add('selected-row');
+  });
+
   const tableBody = document.querySelector('tbody')
   const rows = Array.from(document.querySelectorAll('tbody > tr'));
   const headers = Array.from(document.querySelectorAll('thead > tr > th'))

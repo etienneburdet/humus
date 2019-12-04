@@ -1,6 +1,7 @@
-<tr class="text-center align-middle sort-transition">
-  <td width="150px">
-    <strong> <%= project.name %></strong>
+<tr class="text-center align-middle">
+  <td>
+    <i class="fas fa-grip-lines"></i>
+    <strong> <%= truncate(project.name, length: 15) %></strong>
   </td>
   <td><p><%= project.uhi %></p></td>
   <td><p><%= project.water_infiltration %></p></td>
