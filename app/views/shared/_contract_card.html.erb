@@ -7,13 +7,13 @@
           <div class="col text-left"><h4>Votre donation</h4></div>
           <div class="col text-right text-info pr-4"><h4><%= contract.format_currency %>€</h4></div>
           <div class="col text-left pl-4"><h4>Votre Apport</h4></div>
-          <div class="col text-right text-info"><h4><%= (@perc * 100).round  %>%</h4></div>
+          <div class="col text-right text-primary"><h4><%= (@perc * 100).round  %>%</h4></div>
         </div>
         <div class="row">
           <div class="col text-left"><h4>Debut Projet</h4></div>
-          <div class="col text-right text-info pr-4"><h4><%= Date.today %></h4></div>
+          <div class="col text-right text-primary pr-4"><h4><%= Date.today %></h4></div>
           <div class="col text-left pl-4"><h4>Durée Projet</h4></div>
-          <div class="col text-right text-info"><h4><%= contract.project.duration %> ans</h4></div>
+          <div class="col text-right text-primary"><h4><%= contract.project.duration %> ans</h4></div>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
             <h3>-<%= (@uhi).round(1) %>°C</h3>
           </div>
           <div class="second-row mb-2 pb-2">
-            <h5>Chaleur Urbain</h5>
+            <h5>Chaleur Urbaine</h5>
           </div>
         </div>
         <div class="eco-result-box border border-primary rounded text-center">
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="box-bottom d-flex justify-content-center">
-      <%= link_to "Envoyer Facture", send_facturation_path(contract), remote: true %>
+      <%= link_to "Envoyer Facture", send_facturation_path(contract), remote: true, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

@@ -50,8 +50,8 @@
           <div class="first-row">
             -<%=  project.uhi %>°C
           </div>
-          <p>
-            Chaleur Urbain
+          <p data-toggle="tooltip" title="Si tout le monde faisait comme vous, la température en ville baisserait de <%= project.uhi %>°C.">
+            Chaleur Urbaine<br><i class="far fa-question-circle"></i>
           </p>
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
@@ -59,7 +59,8 @@
             <%=  project.water_infiltration %>m³
           </div>
           <p>
-            Infiltration d'eau
+            <p data-toggle="tooltip" title="Tant qu'il pleut moins que ce volume, il n'y a pas de rejet vers la ville.">
+            Infiltration d'eau<br><i class="far fa-question-circle"></i>
           </p>
         </div>
       </div>
@@ -69,15 +70,17 @@
             <%=  project.biodiversity %>
           </div>
           <p>
-            Biodiversité
+            <p data-toggle="tooltip" title="Mesure à la fois le nombre d'individu et la diversité de leur espèces (5 renards < 10 renards < 5 renards + 5 chouettes)">
+            Biodiversité<br><i class="far fa-question-circle"></i>
           </p>
         </div>
         <div class="impact-box border border-primary mr-2 rounded text-center p-2">
           <div class="first-row">
+            <p data-toggle="tooltip" title="Pourcentage de nourriture locale. 100% designe l'autosuffisance.">
             <%=  project.local_food %>%
           </div>
           <p>
-            Nourriture Locale
+            Nourriture Locale<br><i class="far fa-question-circle"></i>
           </p>
         </div>
       </div>

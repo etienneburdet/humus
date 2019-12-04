@@ -1,13 +1,97 @@
-<p>Hi <%= @user.username %>,</p>
+<div class="container" style="margin: 0px 60px 0px 60px">
 
-<p>THIS IS YOUR INVOICE !!!!</p>
+<div class="first-row" style="display:flex; margin-top: 10px; justify-content: space-between;">
+  <div class="logo">
+    <%= image_tag image_url("planet_logo.png"), style:"width:80px;height:80px; border-radius:50%; margin: 10px 0px 0px 0px;" %>
+  </div>
+  <div class="bill-amount-number" style= "display:flex; flex-direction: column; justify-content: center;">
+    <h4>Facture #138</h4>
+  </div>
+</div>
 
-<%= @contract.project.name %>
-<%= @contract.investment %>
-<%= @contract.uhi %>%
-<%= @contract.biodiversity %>
-<%= @contract.water_infiltration %>m³
-<%= @contract.local_food %>%
+<div class ="second-row" style= "margin-top: 30px;">
+  <div class="coordinates">
+    <h4>Humus</h4>
+    <p style="margin-bottom: -10px;">24 rue Louis Blanc</p>
+    <p style="margin-bottom: -10px;">Paris 75010</p>
+    <p style="margin-bottom: -10px;">France</p>
+  </div>
+</div>
 
+<div class="third-row" style="display: flex; justify-content: space-between;">
+  <p>Facturé à : <%= @user.username %></p>
+  <div class="invoice-detail" style="display: flex; justify-content: space-between;">
+    <div class="details-names" style="display: flex; flex-direction: column; justify-content: center; text-align: right;">
+      <p>Date : </p>
+      <p>Echéance :</p>
+    </div>
+    <div class="details-values" style="display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
+      <p><%= @contract.created_at.day %>/<%= @contract.created_at.month %>/<%= @contract.created_at.year %></p>
+      <p><%= @contract.created_at.day %>/<%= @contract.created_at.month + 1 %>/<%= @contract.created_at.year %></p>
+    </div>
+  </div>
+</div>
 
-<p>See ya!</p>
+<div class="fourth-row" style="display: flex; justify-content: space-between; margin: 15px 0px 15px 0px;">
+  <div style= "width: 50%">
+    <h4>Article</h4>
+    <p>Participation au projet <%= @contract.project.name %> ; bien lié au contrat de propriété d'un lieu à proximité du projet soutenu, bien cessible suite à la vente du bien immobilier afférent.</p>
+  </div>
+  <div style="width: 16.7%; text-align: right;">
+    <h4>Qté</h4>
+    <p>1</p>
+  </div>
+   <div style="width: 16.7%; text-align: right;">
+    <h4>Prix unitaire</h4>
+    <p><%= @contract.investment %> €</p>
+  </div>
+   <div style="width: 16.7%; text-align: right;">
+    <h4>Montant</h4>
+    <p><%= @contract.investment %> €</p>
+  </div>
+</div>
+
+<div style="display: flex; text-align: right; margin: 15px 0px 15px 0px; justify-content: flex-end;">
+  <div style="margin-right: 15px; text-align: right;">
+    <p>Total HT</p>
+    <p>TVA</p>
+    <p>Total TTC</p>
+  </div>
+  <div style="text-align: right;">
+    <p><%= @contract.investment %> €</p>
+    <p><%= @contract.investment * 0.2 %> €</p>
+    <p><%= @contract.investment * 1.2 %> €</p>
+  </div>
+</div>
+
+<div class="sixth-row">
+  <p style="margin-bottom: -10px;">-Exonération de TVA - Art. 261.4.4° a du CGI</p>
+</div>
+<div class="seventh-row">
+  <h4>Conditions d'utilisation</h4>
+  <div>
+    <p style="margin-bottom: -10px;">Modalités et contions de règlement</p>
+    <p style="margin-bottom: -10px;">Date de paiement : à réception de la facture</p>
+    <p style="margin-bottom: -10px;">Mode de paiement : Virement</p>
+    <p style="margin-bottom: -10px;">Nos coordonnées banquaires sont :</p>
+    <p style="margin-bottom: -10px;">Banque : Treezor</p>
+    <p style="margin-bottom: -10px;">RIB : 16798 00001 00000900933 33</p>
+    <p style="margin-bottom: -10px;">IBAN : FR76 1679 8000 0100 0009 0093 333</p>
+    <p style="margin-bottom: -10px;">BIC : TRZOFR21XXX</p>
+    <p style="margin-bottom: -10px;">Escompte pour paiement anticipé : néant</p>
+    <p style="margin-bottom: -10px;">Retard de paiement: indemnité forfaitaire de 40 € (article L441-6 du code de commerce)</p>
+    <p style="margin-bottom: -10px;">Pénalités pour retard de paiement : 1,5% par mois. Conformément à la loi 92 - 1442 du 31 12 92, toute somme non payée à l’échéance</p>
+    <p style="margin-bottom: -10px;">porte intérêts au taux précisé ci-dessus sans formalité préalable</p>
+  </div>
+</div>
+<div class="eight-row my-4">
+  <h4>Humus SAS</h4>
+  <div>
+      <p style="margin-bottom: -10px;">Organisme de formation enregistré auprès de la DIRECCTE IDF sous le n° 11 75 50770 75</p>
+      <p style="margin-bottom: -10px;">Siège social : 16, Villa Gaudelet - 75011 PARIS</p>
+      <p style="margin-bottom: -10px;">SAS au capital de 1 000 € - RCS de Paris 794 949 917</p>
+      <p style="margin-bottom: -10px;">TVA : FR 03 794 949 917 - SIRET : 794 949 917 00023</p>
+  </div>
+</div>
+
+</div>
