@@ -1,3 +1,106 @@
+<div class="container">
+
+<div class="first-row d-flex justify-content-between mt-4">
+  <div style="width:10px;height:10px;" >
+  <div class="logo ml-4" ><%= image_tag image_url("planet_logo.png") %></div>
+   </div>
+  <div class="bill-amount-number d-flex flex-column justify-content-center">
+    <h4>Facture #</h4>
+    <p>Solde exigible: €</p>
+  </div>
+</div>
+
+<div class ="second-row d-flex flex-start ml-4 mt-4">
+  <div class="coordinates d-flex flex-column justify-content-center">
+    <h6>Humus</h6>
+    <p>24 rue Louis Blanc</p>
+    <p>Paris 75010</p>
+    <p>France</p>
+  </div>
+</div>
+
+<div class="third-row d-flex justify-content-between ml-4">
+  <p>Facturé à :</p>
+  <div class="invoice-detail d-flex justify-content-between">
+    <div class="details-names d-flex flex-column justify-content-center">
+      <p>Date : </p>
+      <p>Conditions : </p>
+      <p>Echéance :</p>
+    </div>
+    <div class="details-values d-flex flex-column justify-content-center">
+      <p>Date : </p>
+      <p>Conditions : </p>
+      <p>Echéance :</p>
+    </div>
+  </div>
+</div>s
+
+<div class="fourth-row d-flex justify-content-between my-4">
+  <div class="col-6 d-flex flex-column justify-content-center my-4">
+    <h4 class="my-4">Article</h4>
+    <p>Description</p>
+  </div>
+  <div class="col-2 d-flex flex-column justify-content-center text-right">
+    <h4 class="my-4">Qté</h4>
+    <p>1</p>
+  </div>
+   <div class="col-2 d-flex flex-column justify-content-center text-right">
+    <h4 class="my-4">Taux</h4>
+    <p>20%</p>
+  </div>
+   <div class="col-2 d-flex flex-column justify-content-center text-right">
+    <h4 class="my-4">Montant</h4>
+    <p>2000</p>
+  </div>
+</div>
+
+<div class="fifth-row d-flex text-right my-4 justify-content-end">
+  <div>
+    <p>Sous-total</p>
+    <p>Total</p>
+    <p>Paiement effectué</p>
+    <p>Solde exigible</p>
+  </div>
+  <div class="col-2">
+    <p>8000 €</p>
+    <p>10 000 €</p>
+    <p>10 000 €</p>
+    <p>0 €</p>
+  </div>
+</div>
+
+<div class="sixth-row">
+  <p>-Exonération de TVA - Art. 261.4.4° a du CGI</p>
+</div>
+<div class="seventh-row">
+  <h4>Conditions d'utilisation</h4>
+  <div class="d-flex flex-column justify-content-center">
+    <p>Modalités et contions de règlement</p>
+    <p>Date de paiement : à réception de la facture</p>
+    <p>Mode de paiement : Virement</p>
+    <p>Nos coordonnées banquaires sont :</p>
+    <p>Banque : Treezor</p>
+    <p>RIB : 16798 00001 00000900933 33</p>
+    <p>IBAN : FR76 1679 8000 0100 0009 0093 333</p>
+    <p>BIC : TRZOFR21XXX</p>
+    <p>Escompte pour paiement anticipé : néant</p>
+    <p>Retard de paiement: indemnité forfaitaire de 40 € (article L441-6 du code de commerce)</p>
+    <p>Pénalités pour retard de paiement : 1,5% par mois. Conformément à la loi 92 - 1442 du 31 12 92, toute somme non payée à l’échéance</p>
+    <p>porte intérêts au taux précisé ci-dessus sans formalité préalable</p>
+  </div>
+</div>
+<div class="eight-row my-4">
+  <h4>Humus SAS</h4>
+  <div class="d-flex flex-column justify-content-center">
+      <p>Organisme de formation enregistré auprès de la DIRECCTE IDF sous le n° 11 75 50770 75</p>
+      <p>Siège social : 24, rue Louis Blanc - 75010 PARIS</p>
+      <p>SAS au capital de 1 000 € - RCS de Paris 794 949 917</p>
+      <p>TVA : FR 03 794 949 917 - SIRET : 794 949 917 00023</p>
+  </div>
+</div>
+
+</div>
+
 <p>Hi <%= @user.username %>,</p>
 
 <p>THIS IS YOUR INVOICE !!!!</p>
