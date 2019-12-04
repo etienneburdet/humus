@@ -1,9 +1,16 @@
-import { Sortable } from '@shopify/draggable';
+import { Sortable, Plugins } from '@shopify/draggable';
+import SwapAnimation from '@shopify/draggable/lib/plugins/swap-animation';
 
 const initSortable = () => {
 
   const sortable = new Sortable(document.querySelectorAll('tbody'), {
     draggable: 'tr',
+    swapAnimation: {
+      duration: 200,
+      easingFunction: 'ease-in-out',
+      horizontal: false
+    },
+    plugins: [Plugins.SwapAnimation]
   });
 
   sortable.on('sortable:start', (e) => {
