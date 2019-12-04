@@ -1,0 +1,18 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th><p class="lead text-primary">Chaleur Urbaine</p></th>
+        <th><p class="lead text-primary">Biodiversité</p></th>
+        <th><p class="lead text-primary">Infiltration d'eau</p></th>
+        <th><p class="lead text-primary">Nourriture locale</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @favorites.each do |fav| %>
+        <%= render 'horizontal_card', project: fav.project %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
