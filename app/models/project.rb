@@ -32,6 +32,14 @@ class Project < ApplicationRecord
     favorites.find_by(project: self, user: current_user).present?
   end
 
+  def format_currency
+    self.investment_cap.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1 ').reverse
+  end
+
+  def format_total_investment
+    self.investment.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1 ').reverse
+  end
+
   private
 
   def type_in_list?
@@ -40,5 +48,6 @@ class Project < ApplicationRecord
       errors.add(:project_type, 'must be in the list of defined projects type')
     end
   end
+
 
 end
