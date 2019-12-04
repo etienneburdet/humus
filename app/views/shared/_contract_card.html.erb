@@ -5,7 +5,7 @@
       <div class="container pb-4 pt-4">
         <div class="row">
           <div class="col text-left"><h4>Votre donation</h4></div>
-          <div class="col text-right text-info pr-4"><h4><%= contract.investment %>€</h4></div>
+          <div class="col text-right text-info pr-4"><h4><%= contract.format_currency %>€</h4></div>
           <div class="col text-left pl-4"><h4>Votre Apport</h4></div>
           <div class="col text-right text-info"><h4><%= (@perc * 100).round  %>%</h4></div>
         </div>

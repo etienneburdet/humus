@@ -15,7 +15,7 @@
           <p>J -<%= (project.start_date - Date.today).to_i %></p>
         </div>
         <div class="money-total text-right">
-          <h5><%= project.investment_cap %>€</h5>
+          <h5><%= project.format_currency %>€</h5>
         </div>
       </div>
       <div class="progress flex-grow-1" style="height: 12px;">
