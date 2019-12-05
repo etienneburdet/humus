@@ -2,11 +2,11 @@
   <td align="left">
     <i class="fas fa-grip-lines text-secondary"></i>
     <a data-toggle="collapse" data-target="#collapseProject<%= project.id %>">
-      <strong class="text-nowrap text-center"> <%= project.name %></strong>
+      <%= project.name %>
     </a>
   </td>
-  <td><p><%= project.uhi %></p></td>
-  <td><p><%= project.water_infiltration %></p></td>
+  <td><p>-<%= project.uhi %>°C</p></td>
+  <td><p><%= project.water_infiltration %>m³</p></td>
   <td><p><%= project.biodiversity %></p></td>
-  <td><p><%= project.local_food %></p></td>
+  <td><p><%= project.local_food %>%</p></td>
 </tr>

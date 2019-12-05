@@ -5,6 +5,7 @@ const initSortable = () => {
 
   const sortable = new Sortable(document.querySelectorAll('tbody'), {
     draggable: 'tr',
+    handle: 'i',
     swapAnimation: {
       duration: 200,
       easingFunction: 'ease-in-out',
