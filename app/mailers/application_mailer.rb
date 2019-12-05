@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'humus@eco-project.com'
+  default from: 'invoice@humus-eco.com'
   layout 'mailer'
 end
