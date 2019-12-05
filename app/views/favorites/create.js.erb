@@ -3,5 +3,12 @@ function refreshForm(innerHTML) {
   newLikeForm.innerHTML = innerHTML;
 }
 
+function updateFavCount() {
+   const badge = document.querySelector('.badge');
+   badge.innerHTML = <%= current_user.favorites.count %>;
+}
+
+
 refreshForm('<%= j render "shared/like_unlike", project: @project, user: @user %>');
 updateFavorite();
+updateFavCount();

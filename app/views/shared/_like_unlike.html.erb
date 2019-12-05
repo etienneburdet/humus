@@ -1,11 +1,11 @@
 <% if project.liked_by_current_user?(user) %>
-  <i class="fas fa-star fa-lg fav-star-pos text-info" data-projectid="<%= project.id %>" style="z-index: 10" style="display: inline"></i>
+  <i class="fas fa-star fa-lg fav-star-pos text-info" data-projectid="<%= project.id %>" style="z-index: 1020; display: inline"></i>
   <%= simple_form_for(Favorite.new, url: favorite_path(project), method: :delete, remote: true) do |f| %>
     <%= f.submit :style => "display: none;" %>
     <%= f.input :project, :as => :hidden, :input_html => { :value => project.id } %>
   <% end %>
 <% else %>
-  <i class="far fa-star fa-lg fav-star-pos text-info" data-projectid="<%= project.id %>" style="z-index: 10" style="display: inline"></i>
+  <i class="far fa-star fa-lg fav-star-pos text-info" data-projectid="<%= project.id %>" style="z-index: 1020; display: inline"></i>
   <%= simple_form_for(Favorite.new, url: favorites_path, method: :post, remote: true) do |f| %>
     <%= f.submit :style => "display: none;" %>
     <%= f.input :project, :as => :hidden, :input_html => { :value => project.id } %>

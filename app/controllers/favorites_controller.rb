@@ -9,6 +9,7 @@ class FavoritesController < ApplicationController
     @project = Project.find(params[:favorite][:project])
     @favorite = Favorite.new(user: current_user, project: @project)
     @favorite.save
+    render :create
   end
 
   def destroy
