@@ -1,0 +1,21 @@
+.selected-row {
+  border: solid 1px;
+  border-color: $light-gray;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: white;
+  width: 100%;
+}
+
+.sort-icon {
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.selected-column {
+  opacity: 100;
+}
+
+.sort-title:hover .sort-icon {
+  opacity: 100;
+}

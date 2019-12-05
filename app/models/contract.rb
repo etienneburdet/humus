@@ -27,4 +27,8 @@ class Contract < ApplicationRecord
   def local_food
     perc_investment * project.local_food
   end
+
+  def format_currency
+    self.investment.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1 ').reverse
+  end
 end
