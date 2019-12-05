@@ -20,7 +20,7 @@ const initSortable = () => {
   const tableBody = document.querySelector('tbody')
   const rows = Array.from(document.querySelectorAll('tbody > tr'));
   const headers = Array.from(document.querySelectorAll('thead > tr > th'));
-  headers.shift();
+  headers.shift();  //remove top-left empty corner
 
   const compareRows = (idx) => {
     return (row1, row2) => {
@@ -40,7 +40,7 @@ const initSortable = () => {
             header.querySelector('i').classList.remove('selected-column', 'fa-sort-down');
           }
       });
-      rows.sort(compareRows(idx)).forEach( tr => tableBody.appendChild(tr));
+      rows.sort(compareRows(idx + 1)).forEach( tr => tableBody.appendChild(tr));
     };
   };
 
@@ -48,7 +48,7 @@ const initSortable = () => {
     e.target.querySelector('i').classList.add('fa-sort')
   };
 
-  headers.forEach( (th, idx) => th.addEventListener('click', sortRows(idx)));
+  headers.forEach( (th, idx) => th.addEventListener('click', sortRows(idx))); //compensate for shitf on hea
 };
 
 export { initSortable };
