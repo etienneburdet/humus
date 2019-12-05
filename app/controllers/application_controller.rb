@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
+
+  def default_url_options
+    { host: ENV["https://humus-eco.herokuapp.com/"] || "localhost:3000" }
+  end
 end
