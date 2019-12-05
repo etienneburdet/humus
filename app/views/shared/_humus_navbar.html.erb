@@ -4,7 +4,7 @@
     <%= link_to root_path do %>
       <%= image_tag "planet_logo.png" %>
     <% end %>
-    <%= link_to "Mes Projets Favoris", projects_path, class: "nav-item nav-link" %>
+    <%= link_to "Mes Projets Favoris", favorite_path, class: "nav-item nav-link" %>
     <% if current_user.present? %>
       <span class="badge badge-primary"><%= current_user.favorites.count %></span>
     <% end %>
