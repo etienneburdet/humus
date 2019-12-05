@@ -29,3 +29,8 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+en:
+  helpers:
+    label:
+      user:
+        remember_me: toto
