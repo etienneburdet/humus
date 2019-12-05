@@ -10,14 +10,18 @@ import { updateFavorite }      from '../components/favorite_project.js'
 import { initSortable }        from '../components/sortable_results.js'
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#email-confirmation', {
+initSweetalert('#invoice-send', {
   title: "Facture bien envoyée",
   icon: "success"
+}, (value) => {
+  console.log(value)
+  if (value) {
+    console.log('sweetalert callback')
+    const link = document.getElementById('email-confirmation');
+    console.log(link)
+    link.click();
+  }
 });
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
 
 createProjectMapBox();
 searchProjectMapBox();

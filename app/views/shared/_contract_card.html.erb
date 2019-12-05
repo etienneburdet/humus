@@ -55,7 +55,8 @@
       </div>
     </div>
     <div class="box-bottom d-flex justify-content-center">
-      <%= link_to "Envoyer Facture", send_facturation_path(contract), remote: true, class: "btn btn-primary", id: "email-confirmation" %>
+      <button id="invoice-send" class="btn btn-primary">Envoyer la facture</button>
+      <%= link_to "", send_facturation_path(contract), class: "hidden", id: "email-confirmation" %>
     </div>
   </div>
 </div>
