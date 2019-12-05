@@ -1,7 +1,9 @@
 <tr class="text-center align-middle">
-  <td class="text-left">
-    <i class="fas fa-grip-lines text-light"></i>
-    <strong> <%= truncate(project.name, length: 15) %></strong>
+  <td align="left">
+    <i class="fas fa-grip-lines text-secondary"></i>
+    <%= link_to project_path(project) do %>
+      <strong class="text-nowrap text-center"> <%= project.name %></strong>
+    <% end %>
   </td>
   <td><p><%= project.uhi %></p></td>
   <td><p><%= project.water_infiltration %></p></td>
