@@ -8,6 +8,12 @@ import { investProjectMapBox } from '../components/invest_project_mapbox.js'
 import { bindRangeValue }      from '../components/slider_binding.js'
 import { updateFavorite }      from '../components/favorite_project.js'
 import { initSortable }        from '../components/sortable_results.js'
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#email-confirmation', {
+  title: "Facture bien envoyée",
+  icon: "success"
+});
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
