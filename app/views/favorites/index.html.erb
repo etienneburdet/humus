@@ -19,10 +19,10 @@
     <% @favorites.each do |fav| %>
         <div id="collapseProject<%= fav.project.id %>" class="collapse" data-parent="#accordionProjects">
             <div class="row m-2">
-              <div class="col-8">
+              <div class="col-7">
                 <%= render 'shared/left_project_card', project: fav.project %>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <%= render 'shared/right_project_card', project: fav.project %>
               </div>
           </div>
