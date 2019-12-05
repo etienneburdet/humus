@@ -33,7 +33,7 @@ class ContractsController < ApplicationController
 
   def send_facturation
     UserMailer.with(user: current_user, contract: @contract).facturation.deliver_now
-    redirect_to contract_path(@contract)
+    redirect_to project_path(@contract.project)
   end
 
 
