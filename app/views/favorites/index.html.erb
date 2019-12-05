@@ -1,18 +1,32 @@
 <div class="container">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th class="border-top-0"></th>
-        <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Chaleur Urbaine</p></th>
-        <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Infiltration</p></th>
-        <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Biodiversité</p></th>
-        <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Nourriture locale</p></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @favorites.each do |fav| %>
-        <%= render 'horizontal_card', project: fav.project %>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="accordion" id="accordionProjects">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="border-top-0"></th>
+          <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Chaleur Urbaine</p></th>
+          <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Infiltration</p></th>
+          <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Biodiversité</p></th>
+          <th class="border-top-0"><p class="sort-title text-primary"><i class="sort-icon fas fa-sort text-light mx-1"></i>Nourriture locale</p></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @favorites.each do |fav| %>
+          <%= render 'horizontal_card', project: fav.project %>
+        <% end %>
+      </tbody>
+    </table>
+    <% @favorites.each do |fav| %>
+        <div id="collapseProject<%= fav.project.id %>" class="collapse" data-parent="#accordionProjects">
+            <div class="row m-2">
+              <div class="col-8">
+                <%= render 'shared/left_project_card', project: fav.project %>
+              </div>
+              <div class="col-4">
+                <%= render 'shared/right_project_card', project: fav.project %>
+              </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>

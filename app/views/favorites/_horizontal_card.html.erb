@@ -1,9 +1,9 @@
 <tr class="text-center align-middle">
   <td align="left">
     <i class="fas fa-grip-lines text-secondary"></i>
-    <%= link_to project_path(project) do %>
+    <a data-toggle="collapse" data-target="#collapseProject<%= project.id %>">
       <strong class="text-nowrap text-center"> <%= project.name %></strong>
-    <% end %>
+    </a>
   </td>
   <td><p><%= project.uhi %></p></td>
   <td><p><%= project.water_infiltration %></p></td>
