@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :set_contract, only: %i[show]
+  before_action :set_contract, only: %i[show send_facturation]
   before_action :set_project, only: %i[new create]
 
   def index
@@ -7,11 +7,11 @@ class ContractsController < ApplicationController
   end
 
   def show
-    perc_investment
-    @uhi = @perc * @contract.project.uhi
-    @water_infiltration = @perc * @contract.project.water_infiltration
-    @biodiversity = @perc * @contract.project.biodiversity
-    @local_food = @perc * @contract.project.local_food
+    @perc = @contract.perc_investment
+    @uhi = @contract.uhi
+    @water_infiltration = @contract.water_infiltration
+    @biodiversity = @contract.biodiversity
+    @local_food = @contract.local_food
   end
 
   def new
@@ -31,6 +31,10 @@ class ContractsController < ApplicationController
     redirect_to contract_path(@contract)
   end
 
+  def send_facturation
+    UserMailer.with(user: current_user, contract: @contract).facturation.deliver_now
+    redirect_to contract_path(@contract)
+  end
 
 
   private
@@ -47,7 +51,7 @@ class ContractsController < ApplicationController
     params.require(:contract).permit(:investment)
   end
 
-  def perc_investment
-    @perc = @contract.investment.fdiv(@contract.project.investment_cap)
-  end
+  # def perc_investment
+  #   @perc = @contract.investment.fdiv(@contract.project.investment_cap)
+  # end
 end

@@ -9,6 +9,10 @@ import { bindRangeValue }      from '../components/slider_binding.js'
 import { updateFavorite }      from '../components/favorite_project.js'
 import { initSortable }        from '../components/sortable_results.js'
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 createProjectMapBox();
 searchProjectMapBox();
 investProjectMapBox();

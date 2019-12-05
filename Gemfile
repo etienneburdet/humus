@@ -17,10 +17,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
+gem 'postmark-rails'
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'letter_opener'
 end
 
 group :development, :test do

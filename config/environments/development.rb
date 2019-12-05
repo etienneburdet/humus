@@ -1,5 +1,7 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
+  config.action_mailer.default_url_options = { host: "www.humus-eco.com" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -29,8 +31,11 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_controller.asset_host ='http://localhost:3000'
+  config.action_mailer.asset_host = config.action_controller.asset_host
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -59,7 +64,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  # add Cloudinary
-  config.active_storage.service = :cloudinary
 end
