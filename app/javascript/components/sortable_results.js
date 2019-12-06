@@ -25,7 +25,10 @@ const initSortable = () => {
 
   const compareRows = (idx) => {
     return (row1, row2) => {
-      const diff = row2.children[idx].innerText - row1.children[idx].innerText;
+      console.log('sorting rows');
+      const row2Num = row2.children[idx].innerText.replace(/\D/g,'')
+      const row1Num = row1.children[idx].innerText.replace(/\D/g,'')
+      const diff = row2Num - row1Num
       return diff;
     };
   };
