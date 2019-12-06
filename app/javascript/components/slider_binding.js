@@ -7,22 +7,22 @@ const bindRangeValue = () => {
     investRange.addEventListener('input', e => {
       e.preventDefault();
       investInput.value = investRange.value * investCap / 100;
-      calcul((investRange.value * investCap / 100), investCap);
+      setBadges();
     });
 
     investInput.addEventListener('input', e => {
       e.preventDefault();
       investRange.value = investInput.value * 100 / investCap;
-      calcul((investRange.value * investCap / 100), investCap);
+      setBadges();
     });
   }
+};
 
-const calcul = (value, cap) => {
-  let perc = (value / cap);
+const setBadges = () => {
   const impacts = document.querySelectorAll('.impact-calculation');
 
   impacts.forEach((item) => {
-    const v = parseInt(item.dataset.value, 10) * perc;
+    const v = parseInt(item.dataset.value, 10) * investRange.value / 100;
     item.innerText = v.toFixed(1);
   });
 };
