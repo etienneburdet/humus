@@ -12,10 +12,10 @@ const bindRangeValue = () => {
 
     investInput.addEventListener('input', e => {
       e.preventDefault();
-      calcul((investRange.value = investInput.value * 100), investCap);
+      investRange.value = investInput.value * 100 / investCap;
+      calcul((investRange.value * investCap / 100), investCap);
     });
   }
-};
 
 const calcul = (value, cap) => {
   let perc = (value / cap);
