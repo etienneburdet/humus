@@ -1,14 +1,11 @@
 const updateFavorite = () => {
 
-  var stars = document.querySelectorAll(".change-icon i");
+  const stars = document.querySelectorAll(".change-icon i");
 
   stars.forEach((star) => {
 
-    var starIdProject = star.dataset.projectid ;
-    console.log(starIdProject);
-
-    var buttonUpdate = document.querySelector(`#like-project-${starIdProject} input[type="submit"]`);
-    console.log(buttonUpdate);
+    const starIdProject = star.dataset.projectid ;
+    const buttonUpdate = document.querySelector(`#like-project-${starIdProject} input[type="submit"]`);
 
     star.addEventListener("click", (event) => {
       buttonUpdate.click();
