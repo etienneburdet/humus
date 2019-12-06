@@ -23,10 +23,6 @@ initSweetalert('#invoice-send', {
   }
 });
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
 createProjectMapBox();
 searchProjectMapBox();
 investProjectMapBox();
