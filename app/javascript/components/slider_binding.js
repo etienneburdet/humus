@@ -12,7 +12,7 @@ const bindRangeValue = () => {
 
     investInput.addEventListener('input', e => {
       e.preventDefault();
-      investRange.value = investInput.value * 100 / investCap;
+      calcul((investRange.value = investInput.value * 100), investCap);
     });
   }
 };
